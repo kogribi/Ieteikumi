@@ -1,0 +1,12 @@
+body{
+    font-family: 'Comic Sans MS';
+    margin: 0;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    background-color: #D4E4EC;
+}
+.home{
+place-items: center;
+}
