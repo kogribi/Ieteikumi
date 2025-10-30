@@ -1,3 +1,9 @@
+<?php
+session_start();
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +21,13 @@
             IETEIKUMI.lv
         </div>
         <div>
-            
+            <?php if (!isset($_SESSION['user_id'])): ?>
+    <a href="register.php"><button>Reģistrēties</button></a>
+    <a href="login.php"><button>Pieteikties</button></a>
+<?php else: ?>
+    <a href="profile.php"><button>Profils</button></a>
+    <a href="logout.php"><button>Atteikties</button></a>
+<?php endif; ?>
         </div>
 </body>
 </html>
