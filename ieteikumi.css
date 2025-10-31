@@ -163,6 +163,7 @@ main{
   border-radius: 12px;
   background-color: white;
   transition: all 0.3s ease;
+  width: 100%;
 }
 
 .sidebar-options:hover {
@@ -172,6 +173,21 @@ main{
   transform: translateX(5px);
   box-shadow: 0 4px 10px rgba(0, 119, 255, 0.2);
 }
+.sidebar-options.active {
+  background-color: #0077ff;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 119, 255, 0.2);
+  transform: none;
+}
+.sidebar-options.active:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 119, 255, 0.2);
+  transform: translateX(-5px);
+}
+
 .outer_content{             
   padding: 10px;
   overflow: hidden;
