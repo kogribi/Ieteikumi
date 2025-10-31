@@ -9,10 +9,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'] ?? '';
     $password2 = $_POST['password2'] ?? '';
 
-    if ($username === '') $errors[] = "Enter username.";
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = "Enter a valid email.";
-    if (strlen($password) < 6) $errors[] = "Password must be at least 6 characters.";
-    if ($password !== $password2) $errors[] = "Passwords do not match.";
+    if ($username === '') $errors[] = "Ievadi lietotāj vardu.";
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = "Izmato derīgu email.";
+    if (strlen($password) < 6) $errors[] = "Parolē ir jābūt vismaz 6 simboli.";
+    if ($password !== $password2) $errors[] = "Paroles nav vienādas!.";
 
     if (empty($errors)) {
         $stmt = $conn->prepare("SELECT id FROM users WHERE email=?");
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->store_result();
 
         if ($stmt->num_rows > 0) {
-            $errors[] = "Email is already registered.";
+            $errors[] = "Emails jau ir izmantots!.";
         } else {
             $hash = password_hash($password, PASSWORD_DEFAULT);
             $stmt = $conn->prepare("INSERT INTO users (username,email,password_hash) VALUES (?,?,?)");
@@ -40,17 +40,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 <!doctype html>
 <html>
-<head><meta charset="utf-8"><title>Register</title></head>
+<head>
+    <meta charset="utf-8"><title>Register</title>
+    <link href="forms.css" rel="stylesheet">
+</head>
 <body>
-<h1>Register</h1>
-<?php foreach($errors as $e) echo "<p style='color:red;'>".htmlspecialchars($e)."</p>"; ?>
-<form method="post">
-  <input name="username" placeholder="Username" required><br>
-  <input name="email" type="email" placeholder="Email" required><br>
-  <input name="password" type="password" placeholder="Password" required><br>
-  <input name="password2" type="password" placeholder="Repeat password" required><br>
-  <button type="submit">Register</button>
+<form method="post" class="form">
+    <p class="title">Reģistrēties </p>
+    <p class="message">Reģistrējies lai varētu pilnīgi izmantot majaslapu! </p>
+    <label>
+            <input required="" placeholder="" type="text" class="input" name="username">
+            <span>Lietotāj vards</span>
+    </label>
+
+    <label>
+        <input name="email" required="" placeholder="" type="email" class="input">
+        <span>Email</span>
+    </label> 
+        
+    <label>
+        <input name="password" required="" placeholder="" type="password" class="input">
+        <span>Parole</span>
+    </label>
+    <label>
+        <input name="password2" required="" placeholder="" type="password" class="input">
+        <span>Atkartot paroli</span>
+    </label>
+    <?php foreach($errors as $e) echo "<p style='color:red;'>".htmlspecialchars($e)."</p>"; ?>
+    <button type="submit" class="submit">Iesniegt</button>
+    <p class="signin">Jau ir profils? <a href="login.php">Pieraksties!</a> </p>
 </form>
-<p><a href="login.php">Already have an account? Log in</a></p>
 </body>
 </html>

@@ -31,15 +31,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 <!doctype html>
 <html>
-<head><meta charset="utf-8"><title>Login</title></head>
+<head>
+    <meta charset="utf-8"><title>Login</title>
+    <link href="forms.css" rel="stylesheet">
+</head>
 <body>
-<h1>Login</h1>
-<?php foreach($errors as $e) echo "<p style='color:red;'>".htmlspecialchars($e)."</p>"; ?>
-<form method="post">
-  <input name="email" type="email" placeholder="Email" required><br>
-  <input name="password" type="password" placeholder="Password" required><br>
-  <button type="submit">Login</button>
+
+<form method="post" class="form">
+    <p class="title">Pieraksties </p>
+    <p class="message">Pieraksties, lai izmantotu majaslapu. </p>
+    <label>
+  <input name="email" type="email"  required class="input">
+  <span>Email</span>
+    </label>
+    <label>
+  <input name="password" type="password"  required class="input">
+  <span>Parole</span>
+    </label>
+  <button type="submit" class="submit">Login</button>
+  <?php foreach($errors as $e) echo "<p style='color:red;'>".htmlspecialchars($e)."</p>"; ?>
+  <p class="signin">Izveido profilu šeit! <a href="register.php">Reģistrēties</a> </p>
 </form>
-<p><a href="register.php">Create account</a></p>
 </body>
 </html>
