@@ -45,6 +45,7 @@ while ($row = $result->fetch_assoc()) { // makes each row an associative array
        <div class="sidebar-options"><img width="25" height="25" src="https://img.icons8.com/ios/50/video-call.png" alt="video"/>Video</div>
        <div class="sidebar-options"><img width="25" height="25" src="https://img.icons8.com/ios/50/controller.png" alt="games"/>Spēles</div>
        <div class="sidebar-options"><img width="25" height="25" src="https://img.icons8.com/ios/50/national-park.png" alt="cutlery"/>Vietas</div>
+       <div class="sidebar-options"><img width="25" height="25" src="https://img.icons8.com/ios/50/product--v1.png" alt="cutlery"/>Producti</div>
     </div>
     <div>
         <div class="sidebar-options"><img width="25" height="25" src="https://img.icons8.com/ios/50/question-mark--v1.png" alt="home--v1"/>Palīdzība</div>
