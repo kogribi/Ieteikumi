@@ -33,7 +33,7 @@ if (isset($_POST['genre'])){
         <div>
         <a href="create.php"><button class="button_create"><span>Izveidot ieteikumu</span><img class="plus" width="25" height="25" src="https://img.icons8.com/ios/50/plus--v1.png" alt="home--v1"/></button></a>
         </div>
-        <div>
+        <div class="login_buttons">
             <?php if (!isset($_SESSION['user_id'])): ?>
     <a href="register.php"><button class="boton-elegante"><span>Reģistrēties</span><img width="25" height="25" src="https://img.icons8.com/ios/50/add-user-male.png" alt="home--v1"/></button></a>
     <a href="login.php"><button class="boton-elegante"><span>Pieteikties</span><img width="25" height="25" src="https://img.icons8.com/ios/50/login-rounded-right--v1.png" alt="home--v1"/></button></a>
