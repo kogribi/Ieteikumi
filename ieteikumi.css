@@ -4,6 +4,7 @@ body {
   background-color: #f5f6fa;
   color: #222;
   margin: 0;
+  overflow: hidden;
 }
 
 
@@ -89,6 +90,7 @@ header {
 
 .max-w-full {
   max-width: 100%;
+  overflow: hidden;
 }
 .min-h-screen {
   min-height: 100dvh;
@@ -108,6 +110,10 @@ header {
   overflow: hidden;
   transition: all 0.3s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  place-items: center;
+  align-items: center;
+  align-content: center;
 }
 
 .boton-elegante::after {
@@ -166,6 +172,35 @@ main{
   width: 100%;
 }
 
+@media screen and (max-width: 600px){
+  span{
+    display: none;
+  }
+  .plus{
+    display: inline !important;
+  }
+    .sidebar{
+    min-width: 60px;
+    padding: 5px;
+  }
+  .button_create{
+    padding: 5px;
+  }
+  .sidebar-options img{
+    width: 20px;
+    height: 20px;
+  }
+  .title{
+    font-size: 1rem;
+  }
+  .item{
+    width: 275px !important;
+  }
+
+}
+.plus{
+  display: none;
+}
 .sidebar-options:hover {
   background-color: #0077ff;
   color: white;
@@ -195,12 +230,15 @@ main{
 }
 .content{
 height: 100%;
+width: 100%;
 display: flex;
 flex-wrap: wrap;
 gap: 10px;
 overflow-y: auto;
 overflow-x: hidden;
 scrollbar-width: none;
+animation: myAnimation 1s ease-in forwards;
+transform: translateY(20px);
 }
 .item{
   display: flex;
@@ -208,17 +246,30 @@ scrollbar-width: none;
   background: white;
   width: 350px;           
   height: 250px;
-  flex-shrink: 0;         
-  display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
   border-radius: 12px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
 }
+
+@keyframes myAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0)
+  }
+  }
+
+
 .item:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px) !important;
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
 }
 .images{
   width: 100%;

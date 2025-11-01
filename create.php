@@ -17,6 +17,7 @@ if (isset($_POST['submit'])) {
     $price = $_POST['price'];
     $description = $_POST['description'];
     $title = $_POST['title'];
+    $length = $_POST['length'];
     $imagePath = NULL;
     if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) { // $_FILES images temp place and $_FILES error= all the error info upload_err_ok=0(no errors)
         $fileTmpPath = $_FILES['image']['tmp_name']; // C:\laragon\www\project\tmp\php1234.tmp
@@ -35,11 +36,11 @@ if (isset($_POST['submit'])) {
         echo "nav vai nesanaca izmantot image";
     }
 
-    if(empty($rating) || empty($genre) || empty($time) || empty($price) || empty($title) || empty($description)) {
+    if(empty($rating) || empty($genre) || empty($time) || empty($price) || empty($title) || empty($description) || empty($length)) {
         echo "Please fill in all fields.";
     } else {
-        $stmt = $conn->prepare("INSERT INTO recommendations (user, title, rating, genre, time, price, description, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssissdss", $user, $title, $rating, $genre, $time, $price, $description, $imagePath);
+        $stmt = $conn->prepare("INSERT INTO recommendations (user, title, rating, genre, time, price, length, description, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssissdiss", $user, $title, $rating, $genre, $time, $price, $length, $description, $imagePath);
         $stmt->execute();
 
         echo "Recommendation saved!";
@@ -69,17 +70,20 @@ if (isset($_POST['submit'])) {
             <option value="Video">Video</option>
             <option value="Spēles">Spēles</option>
             <option value="Vietas">Vietas</option>
-            <option value="Producti">Producti</option>
+            <option value="Producti">Produkti</option>
         </select><br><br>
 
-        <label>Time (e.g., 2 hours):</label><br>
+        <label>Time  (e.g., 2):</label><br>
         <input type="text" name="time" maxlength="50" required><br><br>
 
+        <label>Lenght (e.g., 2) </label><br>
+        <input type="number" name="length" required><br><br>
+
         <label>Price (e.g., 15.99):</label><br>
-        <input type="number" step="0.01" name="price" required><br><br>
+        <input type="number" step="0.00" name="price" required><br><br>
 
         <label>Description:</label><br>
-        <textarea name="description" rows="4" cols="50" maxlength="1000" required></textarea><br><br>
+        <textarea name="description" rows="4" cols="50" required></textarea><br><br>
 
         <label>Image (optional):</label><br>
         <input type="file" name="image" accept="image/*"><br><br>
