@@ -10,7 +10,7 @@ while ($row = $result->fetch_assoc()) { // makes each row an associative array
 if (isset($_POST['genre'])){
      $_SESSION['selected_genre']=$_POST['genre'];
 } else {
-    $_SESSION['selected_genre']==='Home';
+    $_SESSION['selected_genre']='Home';
 }
 ?>
 
