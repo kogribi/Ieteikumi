@@ -70,7 +70,8 @@ if (isset($_POST['submit'])) {
             <option value="Video">Video</option>
             <option value="Spēles">Spēles</option>
             <option value="Vietas">Vietas</option>
-            <option value="Producti">Produkti</option>
+            <option value="Produkti">Produkti</option>
+            <option value="Aktivitāte">Aktivitāte</option>
         </select><br><br>
 
         <label>Time  (e.g., 2):</label><br>
