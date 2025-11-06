@@ -3,7 +3,7 @@ session_start();
 
 
 if (!isset($_SESSION['username'])) {
-    echo "You must be logged in to create a recommendation.";
+   echo "You must be logged in to create a recommendation.";
     exit;
 }
 
@@ -51,20 +51,24 @@ if (isset($_POST['submit'])) {
 <html>
 <head>
     <title>Create Recommendation</title>
+    <link href="create.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Create a Recommendation</h1>
+    <form class="form" method="POST" action="" enctype="multipart/form-data">
+    <p class="title">Izveido ieteikumu! </p>
+    <p class="message">Piepildi visu! </p>
+        <label>
+        <input class="input" type="text" name="title" maxlength="100" required>
+        <span>Tituls</span>
+        </label>
 
-    
-    <form method="POST" action="" enctype="multipart/form-data">
-
-        <label>Title:</label><br>
-        <input type="text" name="title" maxlength="100" required><br><br>
-
-        <label>Rating (1-10):</label><br>
-        <input type="number" name="rating" min="1" max="10" required><br><br>
-
-        <label>Genre:</label><br>
+        <label>
+        <input class="input" type="number" name="rating" min="1" max="10" required>
+        <span>Novertējums (1-10)</span>
+        </label>
+        <div class="container">
+        <label>
+        <div class="select">
         <select name="genre" maxlength="50" required>
             <option value="Ēdiens">Ēdiens</option>
             <option value="Video">Video</option>
@@ -72,24 +76,36 @@ if (isset($_POST['submit'])) {
             <option value="Vietas">Vietas</option>
             <option value="Produkti">Produkti</option>
             <option value="Aktivitāte">Aktivitāte</option>
-        </select><br><br>
+        </select>
+        </div>
+        </div>
+        </label>
+        </div>
+        <label>
+        <input class="input" type="text" name="time" maxlength="50" required>
+        <span>Laiks</span>
+        </label>
+        <label>
+        <input class="input" type="number" name="length" required>
+        <span>Garums</span>
+        </label>
 
-        <label>Time  (e.g., 2):</label><br>
-        <input type="text" name="time" maxlength="50" required><br><br>
+        <label>
+        <input class="input" type="number" step="0.00" name="price" required>  
+        <span>Cena</span>
+        </label>
 
-        <label>Lenght (e.g., 2) </label><br>
-        <input type="number" name="length" required><br><br>
+        <label><span>Paskaidrojums</span>
+        <textarea name="description" rows="4" cols="50" required></textarea>
+        
+        </label>
 
-        <label>Price (e.g., 15.99):</label><br>
-        <input type="number" step="0.00" name="price" required><br><br>
-
-        <label>Description:</label><br>
-        <textarea name="description" rows="4" cols="50" required></textarea><br><br>
-
-        <label>Image (optional):</label><br>
-        <input type="file" name="image" accept="image/*"><br><br>
-
-        <input type="submit" name="submit" value="Create Recommendation">
+        <label class="drop-container">
+        <span class="drop-title">Speid šeit lai pievienotu bildi!</span>
+    
+        <input class="input" type="file" name="image" accept="image/*" id="file-input">
+        </label>
+        <input class="submit" type="submit" name="submit" value="Create Recommendation">
     </form>
 </body>
 </html>
