@@ -89,7 +89,19 @@ if (isset($_POST['genre'])){
     <div class="content">
         <?php foreach ($recommendations as $rec){ ?> <!-- go through every item in array one by one and store each of them in $rec -->
             <?php if ($_SESSION['selected_genre']==='Home') { ?>
-        <div class="item"> 
+        <div class="item"  
+            data-title="<?php echo htmlspecialchars($rec['title']); ?>"
+            data-image="<?php echo htmlspecialchars($rec['image'] ?? 'https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg'); ?>"
+            data-genre="<?php echo htmlspecialchars($rec['genre']); ?>"
+            data-rating="<?php echo htmlspecialchars($rec['rating']); ?>"
+            data-id="<?php echo htmlspecialchars($rec['id']); ?>"
+            data-user="<?php echo htmlspecialchars($rec['user']); ?>"
+            data-time="<?php echo htmlspecialchars($rec['time']); ?>"
+            data-price="<?php echo htmlspecialchars($rec['price']); ?>"
+            data-length="<?php echo htmlspecialchars($rec['length']); ?>"
+            data-created_at="<?php echo htmlspecialchars($rec['created_at']); ?>"
+            data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"
+        > 
             <div class="images">
                 <img width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
             </div>
@@ -114,7 +126,18 @@ if (isset($_POST['genre'])){
         </div>
         <?php } ?>
         <?php if ($_SESSION['selected_genre']==='Food' && $rec['genre']==='Ēdiens') { ?>
-            <div class="item"> 
+            <div class="item" 
+            data-title="<?php echo htmlspecialchars($rec['title']); ?>"
+            data-image="<?php echo htmlspecialchars($rec['image'] ?? 'https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg'); ?>"
+            data-genre="<?php echo htmlspecialchars($rec['genre']); ?>"
+            data-rating="<?php echo htmlspecialchars($rec['rating']); ?>"
+            data-id="<?php echo htmlspecialchars($rec['id']); ?>"
+            data-user="<?php echo htmlspecialchars($rec['user']); ?>"
+            data-time="<?php echo htmlspecialchars($rec['time']); ?>"
+            data-price="<?php echo htmlspecialchars($rec['price']); ?>"
+            data-length="<?php echo htmlspecialchars($rec['length']); ?>"
+            data-created_at="<?php echo htmlspecialchars($rec['created_at']); ?>"
+            data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"> 
             <div class="images">
                 <img width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
             </div>
@@ -139,7 +162,17 @@ if (isset($_POST['genre'])){
         </div>
         <?php } ?>
         <?php if ($_SESSION['selected_genre']==='Food' && $rec['genre']==='Ēdiens') { ?>
-            <div class="item"> 
+            <div class="item" data-title="<?php echo htmlspecialchars($rec['title']); ?>"
+            data-image="<?php echo htmlspecialchars($rec['image'] ?? 'https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg'); ?>"
+            data-genre="<?php echo htmlspecialchars($rec['genre']); ?>"
+            data-rating="<?php echo htmlspecialchars($rec['rating']); ?>"
+            data-id="<?php echo htmlspecialchars($rec['id']); ?>"
+            data-user="<?php echo htmlspecialchars($rec['user']); ?>"
+            data-time="<?php echo htmlspecialchars($rec['time']); ?>"
+            data-price="<?php echo htmlspecialchars($rec['price']); ?>"
+            data-length="<?php echo htmlspecialchars($rec['length']); ?>"
+            data-created_at="<?php echo htmlspecialchars($rec['created_at']); ?>"
+            data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"> 
             <div class="images">
                 <img width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
             </div>
@@ -164,7 +197,17 @@ if (isset($_POST['genre'])){
         </div>
         <?php } ?>
         <?php if ($_SESSION['selected_genre']==='Video' && $rec['genre']==='Video') { ?>
-            <div class="item"> 
+            <div class="item" data-title="<?php echo htmlspecialchars($rec['title']); ?>"
+            data-image="<?php echo htmlspecialchars($rec['image'] ?? 'https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg'); ?>"
+            data-genre="<?php echo htmlspecialchars($rec['genre']); ?>"
+            data-rating="<?php echo htmlspecialchars($rec['rating']); ?>"
+            data-id="<?php echo htmlspecialchars($rec['id']); ?>"
+            data-user="<?php echo htmlspecialchars($rec['user']); ?>"
+            data-time="<?php echo htmlspecialchars($rec['time']); ?>"
+            data-price="<?php echo htmlspecialchars($rec['price']); ?>"
+            data-length="<?php echo htmlspecialchars($rec['length']); ?>"
+            data-created_at="<?php echo htmlspecialchars($rec['created_at']); ?>"
+            data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"> 
             <div class="images">
                 <img width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
             </div>
@@ -189,7 +232,17 @@ if (isset($_POST['genre'])){
         </div>
         <?php } ?>
         <?php if ($_SESSION['selected_genre']==='Games' && $rec['genre']==='Spēles') { ?>
-            <div class="item"> 
+            <div class="item" data-title="<?php echo htmlspecialchars($rec['title']); ?>"
+            data-image="<?php echo htmlspecialchars($rec['image'] ?? 'https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg'); ?>"
+            data-genre="<?php echo htmlspecialchars($rec['genre']); ?>"
+            data-rating="<?php echo htmlspecialchars($rec['rating']); ?>"
+            data-id="<?php echo htmlspecialchars($rec['id']); ?>"
+            data-user="<?php echo htmlspecialchars($rec['user']); ?>"
+            data-time="<?php echo htmlspecialchars($rec['time']); ?>"
+            data-price="<?php echo htmlspecialchars($rec['price']); ?>"
+            data-length="<?php echo htmlspecialchars($rec['length']); ?>"
+            data-created_at="<?php echo htmlspecialchars($rec['created_at']); ?>"
+            data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"> 
             <div class="images">
                 <img width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
             </div>
@@ -214,7 +267,17 @@ if (isset($_POST['genre'])){
         </div>
         <?php } ?>
         <?php if ($_SESSION['selected_genre']==='Places' && $rec['genre']==='Vietas') { ?>
-            <div class="item"> 
+            <div class="item" data-title="<?php echo htmlspecialchars($rec['title']); ?>"
+            data-image="<?php echo htmlspecialchars($rec['image'] ?? 'https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg'); ?>"
+            data-genre="<?php echo htmlspecialchars($rec['genre']); ?>"
+            data-rating="<?php echo htmlspecialchars($rec['rating']); ?>"
+            data-id="<?php echo htmlspecialchars($rec['id']); ?>"
+            data-user="<?php echo htmlspecialchars($rec['user']); ?>"
+            data-time="<?php echo htmlspecialchars($rec['time']); ?>"
+            data-price="<?php echo htmlspecialchars($rec['price']); ?>"
+            data-length="<?php echo htmlspecialchars($rec['length']); ?>"
+            data-created_at="<?php echo htmlspecialchars($rec['created_at']); ?>"
+            data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"> 
             <div class="images">
                 <img width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
             </div>
@@ -239,7 +302,17 @@ if (isset($_POST['genre'])){
         </div>
         <?php } ?>
         <?php if ($_SESSION['selected_genre']==='Products' && $rec['genre']==='Produkti') { ?>
-            <div class="item"> 
+            <div class="item" data-title="<?php echo htmlspecialchars($rec['title']); ?>"
+            data-image="<?php echo htmlspecialchars($rec['image'] ?? 'https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg'); ?>"
+            data-genre="<?php echo htmlspecialchars($rec['genre']); ?>"
+            data-rating="<?php echo htmlspecialchars($rec['rating']); ?>"
+            data-id="<?php echo htmlspecialchars($rec['id']); ?>"
+            data-user="<?php echo htmlspecialchars($rec['user']); ?>"
+            data-time="<?php echo htmlspecialchars($rec['time']); ?>"
+            data-price="<?php echo htmlspecialchars($rec['price']); ?>"
+            data-length="<?php echo htmlspecialchars($rec['length']); ?>"
+            data-created_at="<?php echo htmlspecialchars($rec['created_at']); ?>"
+            data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"> 
             <div class="images">
                 <img width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
             </div>
@@ -264,7 +337,17 @@ if (isset($_POST['genre'])){
                         </div>
             <?php } ?>
             <?php if ($_SESSION['selected_genre']==='Activity' && $rec['genre']==='Aktivitāte') { ?>
-            <div class="item"> 
+            <div class="item" data-title="<?php echo htmlspecialchars($rec['title']); ?>"
+            data-image="<?php echo htmlspecialchars($rec['image'] ?? 'https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg'); ?>"
+            data-genre="<?php echo htmlspecialchars($rec['genre']); ?>"
+            data-rating="<?php echo htmlspecialchars($rec['rating']); ?>"
+            data-id="<?php echo htmlspecialchars($rec['id']); ?>"
+            data-user="<?php echo htmlspecialchars($rec['user']); ?>"
+            data-time="<?php echo htmlspecialchars($rec['time']); ?>"
+            data-price="<?php echo htmlspecialchars($rec['price']); ?>"
+            data-length="<?php echo htmlspecialchars($rec['length']); ?>"
+            data-created_at="<?php echo htmlspecialchars($rec['created_at']); ?>"
+            data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"> 
             <div class="images">
                 <img width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
             </div>
@@ -293,5 +376,68 @@ if (isset($_POST['genre'])){
     </div>
     </main>
     </div>
+    <div id="myModal" class="modal">
+        
+        
+        <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="Modal_title" ></div>
+        <div class="Modal_img_container"><img id="Modal_image"></div>
+        <div id="Modal_genre" ></div>
+        <div id="Modal_rating" ></div>
+        <div id="Modal_id" ></div>
+        <div id="Modal_user" ></div>
+        <div id="Modal_time" ></div>
+        <div id="Modal_price" ></div>
+        <div id="Modal_length" ></div>
+        <div id="Modal_created_at" ></div>
+        <div id="Modal_desc" ></div>
+        </div>
+<script>
+                   const items = document.querySelectorAll('.item'); 
+                   items.forEach(function(item) {item.addEventListener('click', function() {
+                    const title = item.dataset.title;
+                    const image = item.dataset.image;
+                    const genre = item.dataset.genre;
+                    const rating = item.dataset.rating;
+                    const id = item.dataset.id;
+                    const user = item.dataset.user;
+                    const time = item.dataset.time;
+                    const price = item.dataset.price;
+                    const length = item.dataset.length;
+                    const created_at = item.dataset.created_at;
+                    const desc = item.dataset.desc;
+
+                    document.getElementById('Modal_title').textContent = title;
+                    document.getElementById('Modal_image').src = image;
+                    document.getElementById('Modal_genre').textContent = genre;
+                    document.getElementById('Modal_rating').textContent = rating;
+                    document.getElementById('Modal_id').textContent = id;
+                    document.getElementById('Modal_user').textContent = user;
+                    document.getElementById('Modal_time').textContent = time;
+                    document.getElementById('Modal_price').textContent = price;
+                    document.getElementById('Modal_length').textContent = length;
+                    document.getElementById('Modal_created_at').textContent = created_at;
+                    document.getElementById('Modal_desc').textContent = desc;
+
+                    document.getElementById('myModal').style.display = "block";
+                    
+
+                    });
+                   });
+                    var span = document.getElementsByClassName("close")[0];
+                    var modal = document.getElementById("myModal");
+                        span.onclick = function() {
+                        modal.style.display = "none";
+                        }
+                        window.onclick = function(event) {
+                          if (event.target == modal) {
+                            modal.style.display = "none";
+                            }
+                        }
+
+</script>
+    </div>
 </body>
 </html>
+
