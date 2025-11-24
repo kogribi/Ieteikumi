@@ -376,6 +376,19 @@ if (isset($_POST['genre'])){
     </div>
     </main>
     </div>
+    <?php 
+    $user_id = $_SESSION['user_id'] ?? null;
+    $liked_posts = [];
+    if ($user_id) {
+    $result = $conn->query("SELECT post_id FROM likes WHERE user_id = $user_id");
+    while ($row = $result->fetch_assoc()) {
+        $liked_posts[] = (int)$row['post_id'];
+    }
+}
+     ?>
+<script>
+    const likedPosts = <?= json_encode($liked_posts) ?>;
+</script>
     <div id="myModal" class="modal">
         
         
@@ -392,50 +405,93 @@ if (isset($_POST['genre'])){
         <div id="Modal_length" ></div>
         <div id="Modal_created_at" ></div>
         <div id="Modal_desc" ></div>
+        <label class="like">
+            <input id="like" type="checkbox" data-post-id="">
+            <div class="checkmark">
+                <svg viewBox="0 0 256 256">
+                <rect fill="none" height="256" width="256"></rect>
+                <path d="M224.6,51.9a59.5,59.5,0,0,0-43-19.9,60.5,60.5,0,0,0-44,17.6L128,59.1l-7.5-7.4C97.2,28.3,59.2,26.3,35.9,47.4a59.9,59.9,0,0,0-2.3,87l83.1,83.1a15.9,15.9,0,0,0,22.6,0l81-81C243.7,113.2,245.6,75.2,224.6,51.9Z" stroke-width="20px" stroke="#808080" fill="none"></path></svg>
+            </div>
+        </label>
+        
         </div>
 <script>
-                   const items = document.querySelectorAll('.item'); 
-                   items.forEach(function(item) {item.addEventListener('click', function() {
-                    const title = item.dataset.title;
-                    const image = item.dataset.image;
-                    const genre = item.dataset.genre;
-                    const rating = item.dataset.rating;
-                    const id = item.dataset.id;
-                    const user = item.dataset.user;
-                    const time = item.dataset.time;
-                    const price = item.dataset.price;
-                    const length = item.dataset.length;
-                    const created_at = item.dataset.created_at;
-                    const desc = item.dataset.desc;
 
-                    document.getElementById('Modal_title').textContent = title;
-                    document.getElementById('Modal_image').src = image;
-                    document.getElementById('Modal_genre').textContent = genre;
-                    document.getElementById('Modal_rating').textContent = rating;
-                    document.getElementById('Modal_id').textContent = id;
-                    document.getElementById('Modal_user').textContent = user;
-                    document.getElementById('Modal_time').textContent = time;
-                    document.getElementById('Modal_price').textContent = price;
-                    document.getElementById('Modal_length').textContent = length;
-                    document.getElementById('Modal_created_at').textContent = created_at;
-                    document.getElementById('Modal_desc').textContent = desc;
+var items = document.querySelectorAll('.item');
 
-                    document.getElementById('myModal').style.display = "block";
-                    
+items.forEach(function(item) {
+    item.addEventListener('click', function() {
+        var id = parseInt(item.dataset.id);
 
-                    });
-                   });
-                    var span = document.getElementsByClassName("close")[0];
-                    var modal = document.getElementById("myModal");
-                        span.onclick = function() {
-                        modal.style.display = "none";
-                        }
-                        window.onclick = function(event) {
-                          if (event.target == modal) {
-                            modal.style.display = "none";
-                            }
-                        }
+        
+        document.getElementById('Modal_title').textContent = item.dataset.title;
+        document.getElementById('Modal_image').src = item.dataset.image;
+        document.getElementById('Modal_genre').textContent = item.dataset.genre;
+        document.getElementById('Modal_rating').textContent = item.dataset.rating;
+        document.getElementById('Modal_id').textContent = id;
+        document.getElementById('Modal_user').textContent = item.dataset.user;
+        document.getElementById('Modal_time').textContent = item.dataset.time;
+        document.getElementById('Modal_price').textContent = item.dataset.price;
+        document.getElementById('Modal_length').textContent = item.dataset.length;
+        document.getElementById('Modal_created_at').textContent = item.dataset.created_at;
+        document.getElementById('Modal_desc').textContent = item.dataset.desc;
 
+        
+        var likeCheckbox = document.getElementById('like');
+        likeCheckbox.checked = likedPosts.includes(id);
+        likeCheckbox.dataset.postId = id;
+
+       
+        likeCheckbox.replaceWith(likeCheckbox.cloneNode(true));
+        likeCheckbox = document.getElementById('like');
+
+        likeCheckbox.addEventListener('click', function() {
+            var postId = parseInt(this.dataset.postId);
+            var liked = this.checked;
+
+            
+            var svgPath = this.querySelector('path');
+            if (svgPath) svgPath.setAttribute('fill', liked ? '#FF0000' : 'none');
+
+            
+            if (liked) {
+                if (!likedPosts.includes(postId)) likedPosts.push(postId);
+            } else {
+                var index = likedPosts.indexOf(postId);
+                if (index > -1) likedPosts.splice(index, 1);
+            }
+
+            
+            fetch('like.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: 'post_id=' + postId + '&liked=' + (liked ? 1 : 0)
+            })
+            .then(function(res) { return res.text(); })
+            .then(function(data) {
+                console.log('Like updated:', data);
+            })
+            .catch(function(err) {
+                console.error(err);
+            });
+        });
+
+        document.getElementById('myModal').style.display = "block";
+    });
+});
+                  
+var span = document.getElementsByClassName("close")[0];
+var modal = document.getElementById("myModal");
+
+span.onclick = function() {
+    modal.style.display = "none";
+};
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+};
 </script>
     </div>
 </body>

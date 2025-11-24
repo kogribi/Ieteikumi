@@ -36,14 +36,14 @@ if (isset($_POST['submit'])) {
         echo "nav vai nesanaca izmantot image";
     }
 
-    if(empty($rating) || empty($genre) || empty($time) || empty($price) || empty($title) || empty($description) || empty($length)) {
+    if(empty($rating) || empty($genre) || empty($title) || empty($description)) {
         echo "Please fill in all fields.";
     } else {
         $stmt = $conn->prepare("INSERT INTO recommendations (user, title, rating, genre, time, price, length, description, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
         $stmt->bind_param("ssissdiss", $user, $title, $rating, $genre, $time, $price, $length, $description, $imagePath);
         $stmt->execute();
 
-        echo "Recommendation saved!";
+        header("Location: ieteikumi.php");
     }
 }
 ?>

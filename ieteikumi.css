@@ -247,6 +247,12 @@ main{
   overflow: hidden;
   height: 86.5dvh;         
 }
+.profile_outer_content{
+  padding: 10px;
+  overflow: hidden;
+  width: 50%;
+  height: 86.5dvh;
+}
 .content{
 height: 100%;
 width: 100%;
@@ -391,4 +397,72 @@ transform: translateY(20px);
 .Modal_img_container img{
   width: 50%;
   height: auto;
+}
+.like input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.like {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+  user-select: none;
+  transition: 100ms;
+  transform-origin: center;
+}
+
+.checkmark {
+  top: 0;
+  left: 0;
+  height: 2em;
+  width: 2em;
+  transition: 100ms;
+  animation: dislike_effect 400ms ease;
+  transform-origin: center;
+}
+
+.like input:checked ~ .checkmark path {
+  fill: #FF5353;
+  stroke-width: 0;
+}
+
+.like input:checked ~ .checkmark {
+  animation: like_effect 400ms ease;
+}
+
+.like:hover .checkmark {
+  transform: scale(1.1);
+}
+
+@keyframes like_effect {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes dislike_effect {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
