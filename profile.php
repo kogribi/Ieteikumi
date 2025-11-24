@@ -192,17 +192,17 @@ items.forEach(function(item) {
 
         
         var likeCheckbox = document.getElementById('like');
-        var isLiked = likedPosts.includes(id); // Store the liked state
+        var isLiked = likedPosts.includes(id);
         
-        // Clone to remove old event listeners
+        
         likeCheckbox.replaceWith(likeCheckbox.cloneNode(true));
         likeCheckbox = document.getElementById('like');
         
-        // Set both checked state and postId AFTER cloning
+        
         likeCheckbox.checked = isLiked;
         likeCheckbox.dataset.postId = id;
         
-        // NOW set the fill color after cloning
+        
         var svgPath = likeCheckbox.querySelector('path');
         if (svgPath) {
             svgPath.setAttribute('fill', isLiked ? '#FF0000' : 'none');
