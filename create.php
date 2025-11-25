@@ -12,6 +12,7 @@ require 'connect.php';
 
 if (isset($_POST['submit'])) {
     $user = $_SESSION['username'];
+    $user_id= $_SESSION['user_id'];
     $rating = $_POST['rating'];
     $genre = $_POST['genre'];
     $time = $_POST['time'];
@@ -40,8 +41,8 @@ if (isset($_POST['submit'])) {
     if(empty($rating) || empty($genre) || empty($title) || empty($description)) {
         echo "Please fill in all fields.";
     } else {
-        $stmt = $conn->prepare("INSERT INTO recommendations (user, title, rating, genre, time, price, length, description, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssissdiss", $user, $title, $rating, $genre, $time, $price, $length, $description, $imagePath);
+        $stmt = $conn->prepare("INSERT INTO recommendations (user, user_id, title, rating, genre, time, price, length, description, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("sisissdiss", $user, $user_id, $title, $rating, $genre, $time, $price, $length, $description, $imagePath);
         $stmt->execute();
 
         header("Location: ieteikumi.php");

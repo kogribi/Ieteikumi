@@ -15,8 +15,8 @@ $UserLikedRecomendations = [];
 while ($row = $result->fetch_assoc()) { 
     $UserLikedRecomendations[] = $row; 
 }
-$stmt = $conn->prepare("SELECT * FROM recommendations WHERE user = ? ORDER BY created_at DESC");
-$stmt->bind_param("s", $username);
+$stmt = $conn->prepare("SELECT * FROM recommendations WHERE user_id = ? ORDER BY created_at DESC");
+$stmt->bind_param("i", $user_id);
 $stmt->execute();
 $result = $stmt->get_result();
 $UserCreatedRecomendations = []; 
@@ -89,7 +89,7 @@ if (isset($_POST['genre'])){
 <?php } ?>
     </div>
     </div>
-    <div class="profile_text">Esi sveicināts <?php echo $username; ?>!<br>Paldies tev ka izmanto šo programmu</div>
+    <div class="profile_text">Esi sveicināts <?php echo $username; ?>!<br>Šeit bus redzami tevi izveidotie un patikāmie ieteikumi</div>
     <div class="profile_outer_content">
     <div class="content-title">Jūsu izveidotie ieteikumi:</div>
     <div class="content">

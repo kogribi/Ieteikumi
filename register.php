@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db.php';
+include 'connect.php';
 $errors = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

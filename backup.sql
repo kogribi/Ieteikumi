@@ -28,7 +28,7 @@ CREATE TABLE `likes` (
   `post_id` int NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_like` (`user_id`,`post_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE `likes` (
 
 LOCK TABLES `likes` WRITE;
 /*!40000 ALTER TABLE `likes` DISABLE KEYS */;
-INSERT INTO `likes` VALUES (9,1,10),(4,1,11),(3,1,12),(8,1,15);
+INSERT INTO `likes` VALUES (14,1,17),(18,1,21),(17,1,25),(15,3,17);
 /*!40000 ALTER TABLE `likes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -51,6 +51,7 @@ DROP TABLE IF EXISTS `recommendations`;
 CREATE TABLE `recommendations` (
   `id` int NOT NULL AUTO_INCREMENT,
   `user` varchar(50) NOT NULL,
+  `user_id` int NOT NULL,
   `rating` int NOT NULL,
   `genre` varchar(50) DEFAULT NULL,
   `time` varchar(50) DEFAULT NULL,
@@ -61,7 +62,7 @@ CREATE TABLE `recommendations` (
   `title` varchar(100) NOT NULL,
   `image` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -70,8 +71,36 @@ CREATE TABLE `recommendations` (
 
 LOCK TABLES `recommendations` WRITE;
 /*!40000 ALTER TABLE `recommendations` DISABLE KEYS */;
-INSERT INTO `recommendations` VALUES (5,'Kaspars',7,'Produkti','3',3000.00,1,'2025-10-31 17:47:56','Nopirku no lokala pircēja cēsis teica ka pardos vel tapec iesaku nopirkt lokacija: joiasjdoawjdoi','Laba un Lēta mašina','uploads/6904f64c69bfe.webp'),(6,'Kaspars',7,'Vietas','4',1.00,1,'2025-11-01 16:17:25','Ezers Ninieris ir ainavisks un mierpilns ūdenstilpnis, kas atrodas gleznainā Latvijas nostūrī, kur satiekas meži, pļavas un klusums. Tā ūdeņi spoguļo debesu atspulgus un vēja pieskārienus, radot īpašu harmonijas sajūtu. Ezeru ieskauj lēzeni krasti ar bagātīgu veģetāciju — niedrēm, meldriem un ūdensrožu laukiem, kas vasaras pilnbriedā piešķir tam košu un dzīvīgu izskatu.\r\n\r\nNinieris ir mājvieta daudzām putnu un zivju sugām. Pavasarī te ligzdo ūdensputni, bet makšķernieki bieži sastopami agrās rīta stundās, cerot uz bagātīgu lomu. Apkārtnē ved nelieli meža celiņi, kas aicina nesteidzīgās pastaigās un ļauj izbaudīt dabas mieru.\r\n\r\nLeģenda vēsta, ka senos laikos ezers radies tur, kur reiz bijis neliels ciems, ko pārņēmusi nakts vētra un lietusgāze. Cilvēki, kas tur dzīvojuši, esot pazuduši ūdeņos, un kopš tā laika ezers reizēm “elpo” — naktīs dzirdamas klusās skaņas, it kā zeme vēl atcerētos seno ciemu.\r\n\r\nŠodien Ninieris ir vieta, kur laiks it kā apstājas — ideāla atpūtai, dabas vērošanai un do','Ezers \"Ninieris','uploads/6906329543139.webp'),(7,'Kaspars',10,'Ēdiens','1',20.00,1,'2025-11-01 16:26:09','Sulīgs liellopa gaļas burgers ar mājās gatavotām mērcēm un kraukšķīgiem frī kartupeļiem. Ideāli piemērots ātrai pusdienai.\r\nMalto gaļu (vai zivi) liek bļodā, pievieno olu, šķipsniņu sāls, piparus, smalki sagrieztus sīpolus un ķiplokus, rīvmaizi un visu samīca viendabīgā masā.\r\nJa gaļu vēlas pikantāku, var pievienot maltus čili piparus vai čili mērci.\r\nUzkarsē pannā eļļu. Ar mitrām rokām veido kotletes un tās “pieplacina” uz gaļas dēlīša.\r\nLiek uz pannas un cep no abām pusēm brūnas. Cepšanas laikā kotletes “sarausies”, tāpēc veidojiet tās diametrā 1–2 cm lielākas, nekā ir jūsu maizītes.\r\nJa gatavo pikšas kotletes, tad masai pievieno rīvētu muskatriekstu un pirms cepšanas uz pannas kotletes panē rīvmaizē.\r\nKamēr kotletes cepas, sagatavo mērci: bļodiņā liek krējumu vai majonēzi, pievieno aso čili mērci un samaisa. Pagaršo. Mērcei ir jābūt pikantai. Ja nepieciešams, pievieno sāli un šķipsniņu cukura.\r\nSalātus noskalo un nosusina. Tomātus noskalo, sagriež ripiņās. Marinētos gurķus sagriež šķēlītēs','Perfekta burgera recepte','uploads/690634a1eebf8.jpg'),(8,'Kaspars',7,'Produkti','5',67.00,1,'2025-11-01 16:27:27','Piemers ar kaut ko','Piemers','uploads/690634efa1400.jpg'),(9,'Kaspars',7,'Vietas','2',23.00,1,'2025-11-01 16:33:18','Lieliska pārgājienu taka. Taka vijas gar Latvijas garāko upi Gauju. Daudz meža, dažās kalnainās takas daļās jāredz spoguļklintis. Takas sākumā, sākot no upes krasta, ir lieliskas kempinga vietas ar informācijas centru, daži pludmales volejbola laukumi un laivu noma. Tur var viegli pavadīt visu dienu vai pāris dienas. Tāpat ir lieliskas makšķerēšanas vietas. Ja jums patīk daba, šī ir lieliska vieta.','Cīrulīšu dabas takas','uploads/6906364e942ec.webp'),(10,'Kaspars',6,'Vietas','8',1.00,23,'2025-11-01 17:16:39','Super Lielā Dabas Taka ir plaša un daudzveidīga maršruta taka, kas ved cauri Latvijas krāšņākajām ainavām — mežiem, pļavām, purviem un upju ielejām. Tā ir ideāla vieta gan mierīgai pastaigai, gan garākam pārgājienam dabas mīļotājiem, putnu vērotājiem un fotogrāfiem. Taka piedāvā vairākus atpūtas punktus, skatu torņus un informācijas stendus, kas iepazīstina ar vietējo floru un faunu.\r\n\r\nTakas kopējais garums pārsniedz 20 kilometrus, un tā ir sadalīta vairākos posmos, kas piemēroti dažādiem fiziskās sagatavotības līmeņiem. Gar maršrutu izvietoti dabas vērojumu punkti, soliņi, ugunskura vietas un telšu laukumi, kas ļauj pavadīt dienu vai pat visu nedēļas nogali dabas tuvumā.\r\n\r\nĪpašas iezīmes:\r\n\r\nPanorāmas skats no skatu torņa uz apkārtējiem mežiem un ezeriem\r\n\r\nKoka laipas pāri purviem un mitrājiem\r\n\r\nIespēja novērot retus putnus un dzīvniekus\r\n\r\nInformatīvi stendi ar vietējās ekosistēmas aprakstiem\r\n\r\nĢimenēm draudzīgi posmi un bērnu piedzīvojumu laukumi\r\n\r\nIeteikumi apmeklētājiem:\r\nŅem līdzi dzeramo ūdeni, ērtus apavus un fotoaparātu — Super Lielā Dabas Taka ir vieta, kur daba atklājas visā savā varenībā. Labākais laiks apmeklējumam ir pavasarī un rudenī, kad daba ir īpaši koša un dzīvīga.','Super liela dabas taka','uploads/690640772895e.jpg'),(11,'Kaspars',8,'Aktivitāte','1',1.00,1,'2025-11-05 17:54:51','1 nedēļas treniņu ceļvedis\r\nPirmdiena – Augšējā ķermeņa spēks\r\n\r\nSiltums: 5 min viegla skriešana vai lecamaukla\r\n\r\n3x10 stieņa spiešana guļus\r\n\r\n3x12 hanteles bicepsu cēlieni\r\n\r\n3x15 plecu pacelšana ar hantelēm\r\n\r\n3x12 tricepsa atspiedieni pie sola\r\n\r\nNoslēgums: 5 min stiepšanās\r\n\r\nOtrdiena – Kardiotreniņš\r\n\r\n20 min skriešana vai velo\r\n\r\n10 min intervāli: 30 s sprint + 30 s lēna staigāšana\r\n\r\n5 min vēdera muskuļu vingrinājumi (planks 3x30 s, kāju pacelšana 3x12)\r\n\r\nTrešdiena – Kājas & apakšējā ķermeņa spēks\r\n\r\nSiltums: 5–10 min lecamaukla\r\n\r\n3x12 pietupieni ar svaru\r\n\r\n3x10 izklupieni ar hantelēm\r\n\r\n3x15 teļu pacelšana stāvus\r\n\r\n3x12 glute bridges\r\n\r\nNoslēgums: stiepšanās 5–10 min\r\n\r\nCeturtdiena – Atpūta / viegla mobilitāte\r\n\r\n20–30 min pastaiga vai joga\r\n\r\nVieglas stiepšanās\r\n\r\nFokusēties uz elpošanu un locītavu mobilitāti\r\n\r\nPiektdiena – Pilna ķermeņa HIIT\r\n\r\n5 min siltums: skriešana vai jumping jacks\r\n\r\n30 s katrs, 3 apļi:\r\n\r\nBurpees\r\n\r\nSquat jumps\r\n\r\nPush-ups\r\n\r\nMountain climbers\r\n\r\nPlank\r\n\r\n5–10 min noslēgums: stiepšanās\r\n\r\nSestdiena – Core un stabilitāte\r\n\r\nPlanks 3x45 s\r\n\r\nSide plank 3x30 s katrai pusei\r\n\r\nRussian twists 3x20\r\n\r\nV-up 3x15\r\n\r\nSuperman 3x12\r\n\r\nSvētdiena – Brīva izvēle / aktīva atpūta\r\n\r\nPastaiga, velobraukšana, peldēšana vai jebkura cita viegla aktivitāte','Trenēšanās ceļvedis','uploads/690b8f6ba1184.jpg'),(12,'Kaspars',7,'Video','3',1.00,1,'2025-11-05 18:10:42','Rouza, kuru piespiež precēties ar bagātu vīrieti, iemīlas Džekā, talantīgā māksliniekā, uz nenogremdējamā Titānika klāja.','Filma \"Titāniks\" 1997','uploads/690b9322cd053.jpg'),(14,'Kaspars',9,'Spēles','40',30.00,1,'2025-11-05 18:18:51','Grand Theft Auto V ir 2013. gada piedzīvojumu spēle, ko izstrādāja Rockstar North un publicēja Rockstar Games. Tā ir septītā galvenā spēle Grand Theft Auto sērijā pēc 2008. gada Grand Theft Auto IV un kopumā piecpadsmitā daļa.','Spēle \"GTA V\" 2013','uploads/690b950bc95c7.jpg'),(15,'Kaspars',7,'Spēles','1',18.00,1,'2025-11-19 22:15:56','Sandbox spele ar daudz iespējam','Spēle \"Minecraft\"','uploads/691e419c8acb0.jpg'),(16,'Kaspars',8,'Produkti','0',500.00,0,'2025-11-24 17:16:39','Iepazīstinām ar Xiaomi Robot Vacuum X20+, pavisam jaunu universālu robotizētu putekļsūcēju, kas pārsniedz cerības. Ar savu jaudīgo bāzes staciju, spēcīgo putekļsūcēja un grīdas mazgāšanu, veiklo šķēršļu apiešanu un inteliģento mijiedarbību tas var bez piepūles apmierināt visas jūsu grīdas tīrīšanas vajadzības. Ir pienācis laiks baudīt dzīvi bez raizēm. https://www.euronics.lv/en/housekeeping/vacuum-cleaners/robotic-vacuum-cleaners/bhr8124eu/xiaomi-x20-wet-dry-white-robot-vacuum-cleaner','Automatiskais putekļu sūcējs \"','uploads/692492f78cc6a.png');
+INSERT INTO `recommendations` VALUES (17,'Kaspars',1,1,'Ēdiens','1',4.00,0,'2025-11-25 16:39:23','sis ir lielesiokl','test','uploads/6925dbbb73c04.jpg'),(18,'Peteris1998',3,8,'Ēdiens','0',5.00,30,'2025-11-25 17:09:38','Klasiska itāļu pica ar sieru un tomātiem','Pica Margherita','uploads/6925e2d28b3bb.jpg'),(19,'Peteris1998',3,9,'Spēles','2',15.00,0,'2025-11-25 17:14:42','Minecraft ir “sandbox” spēle, ko izstrādājusi un publicējusi “Mojang Studios”. Formāli izlaista personālajiem datoriem 2011. gada 18. novembrī pēc sākotnējās publiskās alfa versijas izlaišanas 2009. gada 17. maijā, tā ir pārnesta uz daudzām platformām, tostarp mobilajām ierīcēm un dažādām videospēļu konsolēm.','Minecraft','uploads/6925e402aed00.webp'),(20,'Peteris1998',3,7,'Vietas','0',0.00,5,'2025-11-25 17:16:04','Lieliska vieta, kur iegādāties svaigus produktus','Rīgas Centrāltirgus','uploads/6925e4540d22c.jpg'),(21,'Peteris1998',3,8,'Aktivitāte','2',5.00,0,'2025-11-25 17:17:35','Relaksējoša aktivitāte svaigā gaisā','Jogas nodarbība parkā','uploads/6925e4af1929c.jpg'),(22,'Peteris1998',3,7,'Video','3',0.00,0,'2025-11-25 17:21:24','Rouza, kuru piespiež precēties ar bagātu vīrieti, iemīlas Džekā, talantīgā māksliniekā, uz nenogremdējamā Titānika klāja. Diemžēl kuģis ietriecas aisbergā, apdraudot viņu dzīvības.','Filma \"Titaniks\"','uploads/6925e594dbce2.jpeg'),(23,'Peteris1998',3,9,'Ēdiens','1',10.00,0,'2025-11-25 17:24:09','1. Malto gaļu izdauza pret galdu, lai tā paliktu viendabīgāka. Tad izveido no tās divas vienādas bumbinjas un saspiež tās starp pārtikas plēvi, lai izveidoajs divas plānas un apaļas gaļas plāksnites, kuras sasaldē.\r\n2. Sīpolu sagriež ripiņās un pārspiež ar citrona sulu.\r\n3. Kad gaļa sasalusi liek to uz karstas un ietaukotas pannas un pārkaisa ar sāli un pipariem, apcep no vienas puses, tad apgriež otrādi un atkal apkaisa.\r\n4. Maizītes pārgriež uz pusēm un apgrauzdē.\r\n5. Kārto: maizīte, gaļa, sīpoli, siers, salātlapa, majonēze/mērce pēc izveles, maizīte.\r\nBauda siltu\r\n\r\nLabu apetiiti!','Siera burgers','uploads/6925e6395c89e.jpg'),(24,'Peteris1998',3,7,'Vietas','0',0.00,5,'2025-11-25 17:26:09','Perfekta vieta prieks peldešanās, bet parasti daudz cilvēku.','Ninieris','uploads/6925e6b1836c3.png'),(25,'Peteris1998',3,8,'Spēles','32',20.00,0,'2025-11-25 17:29:58','Grand Theft Auto V ir 2013. gada piedzīvojumu spēle, ko izstrādāja Rockstar North un publicēja Rockstar Games. Tā ir septītā galvenā spēle Grand Theft Auto sērijā pēc 2008. gada Grand Theft Auto IV un kopumā piecpadsmitā daļa.','GTA V','uploads/6925e79696a71.avif');
 /*!40000 ALTER TABLE `recommendations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `users` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(100) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password_hash` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'Kaspars','ksokolovs50@gmail.com','$2y$10$rR9TNRlR7uicBlNfaV6VR.4honRH1S1dkwOVUONn4TONyfPm9h4a2','2025-10-30 16:07:50'),(2,'TEST_123','TESTING@gmail.com','$2y$10$gTjq6INS1F3cIUOWw9DaYO6.vQkaxCKVyRvpMa8QmJhOsNwMQ7muO','2025-10-31 12:48:25'),(3,'Peteris1998','peters123@gmail.com','$2y$10$.7K3DffqQ/wl3dq3AQ4rTuZpxvl2MhGjlea3lsLAZ/Ca3FDXzvsbK','2025-11-25 16:48:29');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -83,4 +112,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-11-24 21:25:42
+-- Dump completed on 2025-11-25 20:18:43
