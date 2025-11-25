@@ -5,6 +5,8 @@
 body {
     place-items: center;
     background-color: gray;
+    height: 100vh;
+    margin: 0;
 }
 
 .form {
@@ -17,7 +19,6 @@ body {
     border-radius: 20px;
     position: relative;
   }
-  
   .title {
     font-size: 28px;
     color: royalblue;
@@ -248,3 +249,42 @@ body {
     color: gray;
   }
   
+  @media (max-width: 768px) {
+    body {
+        padding: 20px;
+        height: auto;
+    }
+
+    .form {
+        max-width: 450px;
+        width: 100%;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        height: auto;
+        padding: 20px;
+    }
+
+    .form {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .title {
+        font-size: 22px;
+    }
+
+    .select {
+        height: 2.8em;
+    }
+
+    .drop-title {
+        font-size: 18px;
+    }
+}

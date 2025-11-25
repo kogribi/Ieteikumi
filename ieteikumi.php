@@ -405,6 +405,7 @@ if (isset($_POST['genre'])){
         <div id="Modal_length" ></div>
         <div id="Modal_created_at" ></div>
         <div id="Modal_desc" ></div>
+        
         <label class="like">
             <input id="like" type="checkbox" data-post-id="">
             <div class="checkmark">
@@ -470,6 +471,9 @@ items.forEach(function(item) {
             .then(function(res) { return res.text(); })
             .then(function(data) {
                 console.log('Like updated:', data);
+                if (data=="Not logged in"){
+                    window.location.replace("http://localhost/ieteikumi/register.php");
+                }
             })
             .catch(function(err) {
                 console.error(err);

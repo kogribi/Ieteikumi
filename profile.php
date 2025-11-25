@@ -35,7 +35,7 @@ if (isset($_POST['genre'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="ieteikumi.css" rel="stylesheet">
+    <link href="profile.css" rel="stylesheet">
 </head>
 <body>
     <div class="min-h-screen max-w-full">
@@ -43,13 +43,13 @@ if (isset($_POST['genre'])){
         <div class="title">
             <a href="ieteikumi.php">Ieteikumi.lv</a>
         </div>
-        <div>Esi sveicināts <?php echo $username; ?>!</div>
         <div class="login_buttons">
             <a href="logout.php"><button class="boton-elegante"><span>Atteikties</span><img width="25" height="25" src="https://img.icons8.com/ios/50/exit--v1.png" alt="home--v1"/></button></a>
         </div>
     </header>
     <main>
     <div class="profile_outer_content">
+    <div class="content-title">Jūsu patikāmie ieteikumi:</div>
     <div class="content">
         <?php foreach ($UserLikedRecomendations as $UserLikedRecomendation){ ?> 
     <div class="item"  
@@ -89,7 +89,9 @@ if (isset($_POST['genre'])){
 <?php } ?>
     </div>
     </div>
+    <div class="profile_text">Esi sveicināts <?php echo $username; ?>!<br>Paldies tev ka izmanto šo programmu</div>
     <div class="profile_outer_content">
+    <div class="content-title">Jūsu izveidotie ieteikumi:</div>
     <div class="content">
         <?php foreach ($UserCreatedRecomendations as $UserCreatedRecomendation){ ?> 
     <div class="item"  

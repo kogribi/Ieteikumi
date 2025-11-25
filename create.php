@@ -3,7 +3,8 @@ session_start();
 
 
 if (!isset($_SESSION['username'])) {
-   echo "You must be logged in to create a recommendation.";
+   header("Location: register.php");
+   
     exit;
 }
 
@@ -52,11 +53,12 @@ if (isset($_POST['submit'])) {
 <head>
     <title>Create Recommendation</title>
     <link href="create.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <form class="form" method="POST" action="" enctype="multipart/form-data">
     <p class="title">Izveido ieteikumu! </p>
-    <p class="message">Piepildi visu! </p>
+    <p class="message">Piepildi visu! <b>Ja kaut kas nav vajadzīgs ievadi 0!</b></p>
         <label>
         <input class="input" type="text" name="title" maxlength="100" required>
         <span>Tituls</span>
@@ -106,6 +108,7 @@ if (isset($_POST['submit'])) {
         <input class="input" type="file" name="image" accept="image/*" id="file-input">
         </label>
         <input class="submit" type="submit" name="submit" value="Create Recommendation">
+        <p class="signin">Aiziet <a href="ieteikumi.php">atpakaļ?</a> </p>
     </form>
 </body>
 </html>
