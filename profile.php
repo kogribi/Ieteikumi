@@ -62,7 +62,7 @@ if (isset($_POST['genre'])){
         data-time="<?php echo htmlspecialchars($UserLikedRecomendation['time']); ?>"
         data-price="<?php echo htmlspecialchars($UserLikedRecomendation['price']); ?>"
         data-length="<?php echo htmlspecialchars($UserLikedRecomendation['length']); ?>"
-        data-created_at="<?php echo htmlspecialchars($UserLikedRecomendation['created_at']); ?>"
+        data-created_at="<?php $date=new DateTime($UserLikedRecomendation['created_at']); echo htmlspecialchars(date_format($date,"Y-m-d")); ?>"
         data-desc="<?php echo htmlspecialchars($UserLikedRecomendation['description'] ?? ''); ?>"
     >
         <div class="images">
@@ -104,7 +104,7 @@ if (isset($_POST['genre'])){
         data-time="<?php echo htmlspecialchars($UserCreatedRecomendation['time']); ?>"
         data-price="<?php echo htmlspecialchars($UserCreatedRecomendation['price']); ?>"
         data-length="<?php echo htmlspecialchars($UserCreatedRecomendation['length']); ?>"
-        data-created_at="<?php echo htmlspecialchars($UserCreatedRecomendation['created_at']); ?>"
+        data-created_at="<?php $date=new DateTime($UserCreatedRecomendation['created_at']); echo htmlspecialchars(date_format($date,"Y-m-d")); ?>"
         data-desc="<?php echo htmlspecialchars($UserCreatedRecomendation['description'] ?? ''); ?>"
     >
         <div class="images">
