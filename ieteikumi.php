@@ -99,7 +99,7 @@ if (isset($_POST['genre'])){
             data-time="<?php echo htmlspecialchars($rec['time']); ?>"
             data-price="<?php echo htmlspecialchars($rec['price']); ?>"
             data-length="<?php echo htmlspecialchars($rec['length']); ?>"
-            data-created_at="<?php echo htmlspecialchars($rec['created_at']); ?>"
+            data-created_at="<?php $date=new DateTime($rec['created_at']); echo htmlspecialchars(date_format($date,"Y-m-d")); ?>"
             data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"
         > 
             <div class="images">
@@ -119,43 +119,7 @@ if (isset($_POST['genre'])){
                     </div>
                     <div class="time">
                         <img width="50" height="50" src="<?php if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/trail--v2.png";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/time_2.png";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/price-tag-euro.png";} ?>" alt="time_2"/><br>
-                        <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'] . "km";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'] . "h";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <?php } ?>
-        <?php if ($_SESSION['selected_genre']==='Food' && $rec['genre']==='Ēdiens') { ?>
-            <div class="item" 
-            data-title="<?php echo htmlspecialchars($rec['title']); ?>"
-            data-image="<?php echo htmlspecialchars($rec['image'] ?? 'https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg'); ?>"
-            data-genre="<?php echo htmlspecialchars($rec['genre']); ?>"
-            data-rating="<?php echo htmlspecialchars($rec['rating']); ?>"
-            data-id="<?php echo htmlspecialchars($rec['id']); ?>"
-            data-user="<?php echo htmlspecialchars($rec['user']); ?>"
-            data-time="<?php echo htmlspecialchars($rec['time']); ?>"
-            data-price="<?php echo htmlspecialchars($rec['price']); ?>"
-            data-length="<?php echo htmlspecialchars($rec['length']); ?>"
-            data-created_at="<?php echo htmlspecialchars($rec['created_at']); ?>"
-            data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"> 
-            <div class="images">
-                <img width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
-            </div>
-            <div class="text">
-                <div class="small_title"><?php echo $rec['title'] ?></div>
-                <div class="ratings">
-                    <div class="rating">
-                        <img width="50" height="50" src="https://img.icons8.com/ios/50/rating.png" alt="rating"/><br>
-                        <div style="text-align:center;"><?php echo $rec['rating'] ?><img class="small_star" width="15" height="15" src="https://img.icons8.com/ios/50/star--v1.png" alt="star--v1"/></div>
-                    </div>
-                    <div class="genre">
-                        <img width="50" height="50" src="<?php if($rec['genre']==='Ēdiens'){echo "https://img.icons8.com/ios/50/cutlery.png";}if($rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/running--v1.png";}if($rec['genre']==='Video'){echo "https://img.icons8.com/ios/50/video-call.png";}if($rec['genre']==='Spēles'){echo "https://img.icons8.com/ios/50/controller.png";}if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/national-park.png";}if($rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/product--v1.png";}
-                          ?>" alt="cutlery"/><br>
-                        <div style="text-align:center;"><?php echo $rec['genre'] ?></div>
-                    </div>
-                    <div class="time">
-                        <img width="50" height="50" src="<?php if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/trail--v2.png";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/time_2.png";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/price-tag-euro.png";} ?>" alt="time_2"/><br>
-                        <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'] . "km";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'] . "h";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
+                        <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'] . "km";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'];} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
                     </div>
                 </div>
             </div>
@@ -171,7 +135,7 @@ if (isset($_POST['genre'])){
             data-time="<?php echo htmlspecialchars($rec['time']); ?>"
             data-price="<?php echo htmlspecialchars($rec['price']); ?>"
             data-length="<?php echo htmlspecialchars($rec['length']); ?>"
-            data-created_at="<?php echo htmlspecialchars($rec['created_at']); ?>"
+            data-created_at="<?php $date=new DateTime($rec['created_at']); echo htmlspecialchars(date_format($date,"Y-m-d"));?>"
             data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"> 
             <div class="images">
                 <img width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
@@ -190,7 +154,7 @@ if (isset($_POST['genre'])){
                     </div>
                     <div class="time">
                         <img width="50" height="50" src="<?php if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/trail--v2.png";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/time_2.png";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/price-tag-euro.png";} ?>" alt="time_2"/><br>
-                        <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'] ."km";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'] . "h";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
+                        <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'] ."km";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'];} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
                     </div>
                 </div>
             </div>
@@ -206,7 +170,7 @@ if (isset($_POST['genre'])){
             data-time="<?php echo htmlspecialchars($rec['time']); ?>"
             data-price="<?php echo htmlspecialchars($rec['price']); ?>"
             data-length="<?php echo htmlspecialchars($rec['length']); ?>"
-            data-created_at="<?php echo htmlspecialchars($rec['created_at']); ?>"
+            data-created_at="<?php $date=new DateTime($rec['created_at']); echo htmlspecialchars(date_format($date,"Y-m-d")); ?>"
             data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"> 
             <div class="images">
                 <img width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
@@ -225,7 +189,7 @@ if (isset($_POST['genre'])){
                     </div>
                     <div class="time">
                         <img width="50" height="50" src="<?php if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/trail--v2.png";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/time_2.png";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/price-tag-euro.png";} ?>" alt="time_2"/><br>
-                        <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'] . "km";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'] . "h";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
+                        <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'] . "km";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'];} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
                     </div>
                 </div>
             </div>
@@ -241,7 +205,7 @@ if (isset($_POST['genre'])){
             data-time="<?php echo htmlspecialchars($rec['time']); ?>"
             data-price="<?php echo htmlspecialchars($rec['price']); ?>"
             data-length="<?php echo htmlspecialchars($rec['length']); ?>"
-            data-created_at="<?php echo htmlspecialchars($rec['created_at']); ?>"
+            data-created_at="<?php $date=new DateTime($rec['created_at']); echo htmlspecialchars(date_format($date,"Y-m-d")); ?>"
             data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"> 
             <div class="images">
                 <img width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
@@ -260,7 +224,7 @@ if (isset($_POST['genre'])){
                     </div>
                     <div class="time">
                         <img width="50" height="50" src="<?php if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/trail--v2.png";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/time_2.png";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/price-tag-euro.png";} ?>" alt="time_2"/><br>
-                        <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'] . "km";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'] . "h";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
+                        <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'] . "km";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'];} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
                     </div>
                 </div>
             </div>
@@ -276,7 +240,7 @@ if (isset($_POST['genre'])){
             data-time="<?php echo htmlspecialchars($rec['time']); ?>"
             data-price="<?php echo htmlspecialchars($rec['price']); ?>"
             data-length="<?php echo htmlspecialchars($rec['length']); ?>"
-            data-created_at="<?php echo htmlspecialchars($rec['created_at']); ?>"
+            data-created_at="<?php $date=new DateTime($rec['created_at']); echo htmlspecialchars(date_format($date,"Y-m-d")); ?>"
             data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"> 
             <div class="images">
                 <img width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
@@ -295,7 +259,7 @@ if (isset($_POST['genre'])){
                     </div>
                     <div class="time">
                         <img width="50" height="50" src="<?php if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/trail--v2.png";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/time_2.png";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/price-tag-euro.png";} ?>" alt="time_2"/><br>
-                        <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'] . "km";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'] . "h";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
+                        <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'] . "km";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'];} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
                     </div>
                 </div>
             </div>
@@ -311,7 +275,7 @@ if (isset($_POST['genre'])){
             data-time="<?php echo htmlspecialchars($rec['time']); ?>"
             data-price="<?php echo htmlspecialchars($rec['price']); ?>"
             data-length="<?php echo htmlspecialchars($rec['length']); ?>"
-            data-created_at="<?php echo htmlspecialchars($rec['created_at']); ?>"
+            data-created_at="<?php $date=new DateTime($rec['created_at']); echo htmlspecialchars(date_format($date,"Y-m-d"));?>"
             data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"> 
             <div class="images">
                 <img width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
@@ -330,7 +294,7 @@ if (isset($_POST['genre'])){
                     </div>
                     <div class="time">
                         <img width="50" height="50" src="<?php if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/trail--v2.png";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/time_2.png";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/price-tag-euro.png";} ?>" alt="time_2"/><br>
-                        <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'] . "km";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'] . "h";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
+                        <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'] . "km";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'];} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
                     </div>
                 </div>
             </div>
@@ -346,7 +310,7 @@ if (isset($_POST['genre'])){
             data-time="<?php echo htmlspecialchars($rec['time']); ?>"
             data-price="<?php echo htmlspecialchars($rec['price']); ?>"
             data-length="<?php echo htmlspecialchars($rec['length']); ?>"
-            data-created_at="<?php echo htmlspecialchars($rec['created_at']); ?>"
+            data-created_at="<?php $date=new DateTime($rec['created_at']); echo htmlspecialchars(date_format($date,"Y-m-d")); ?>"
             data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"> 
             <div class="images">
                 <img width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
@@ -365,7 +329,7 @@ if (isset($_POST['genre'])){
                     </div>
                     <div class="time">
                         <img width="50" height="50" src="<?php if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/trail--v2.png";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/time_2.png";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/price-tag-euro.png";} ?>" alt="time_2"/><br>
-                        <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'] . "km";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'] . "h";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
+                        <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'] . "km";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'];} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
                     </div>
                 </div>
             </div>
@@ -391,30 +355,60 @@ if (isset($_POST['genre'])){
 </script>
     <div id="myModal" class="modal">
         
-        
-        <div class="modal-content">
+    <div class="modal-content">
         <span class="close">&times;</span>
+        <div id="Modal_id" ></div>
         <div id="Modal_title" ></div>
         <div class="Modal_img_container"><img id="Modal_image"></div>
-        <div id="Modal_genre" ></div>
-        <div id="Modal_rating" ></div>
-        <div id="Modal_id" ></div>
-        <div id="Modal_user" ></div>
-        <div id="Modal_time" ></div>
-        <div id="Modal_price" ></div>
-        <div id="Modal_length" ></div>
-        <div id="Modal_created_at" ></div>
-        <div id="Modal_desc" ></div>
-        
-        <label class="like">
-            <input id="like" type="checkbox" data-post-id="">
-            <div class="checkmark">
-                <svg viewBox="0 0 256 256">
+        <div class="Modal_container">
+        <div class="Modal_ratings_container">
+        <div>
+            <div id="Modal_genre_image_container"> <img width="50" height="50" src="https://img.icons8.com/ios/50/image--v1.png"> </div>
+            <div id="Modal_genre"> </div>
+        </div>
+        <div>
+            <div id="Modal_rating_image_container"> <img width="50" height="50" src="https://img.icons8.com/ios/50/rating.png"> </div>
+            <div id="Modal_rating"></div>
+        </div>
+        <div>
+            <div id="Modal_time_image_container"> <img width="50" height="50" src="https://img.icons8.com/ios/50/time_2.png"> </div>
+            <div id="Modal_time" ></div>
+        </div>
+        <div>
+            <div id="Modal_price_image_container"> <img width="50" height="50" src="https://img.icons8.com/ios/50/price-tag-euro.png"> </div>
+            <div id="Modal_price" ></div>
+        </div>
+        <div>
+            <div id="Modal_length_image_container"> <img width="50" height="50" src="https://img.icons8.com/ios/50/trail--v2.png"> </div>
+            <div id="Modal_length" ></div>
+        </div>
+        <div class="like_container">
+            <label class="like">
+                <input id="like" type="checkbox" data-post-id="">
+                    <div class="checkmark">
+                    <svg viewBox="0 0 256 256">
                 <rect fill="none" height="256" width="256"></rect>
                 <path d="M224.6,51.9a59.5,59.5,0,0,0-43-19.9,60.5,60.5,0,0,0-44,17.6L128,59.1l-7.5-7.4C97.2,28.3,59.2,26.3,35.9,47.4a59.9,59.9,0,0,0-2.3,87l83.1,83.1a15.9,15.9,0,0,0,22.6,0l81-81C243.7,113.2,245.6,75.2,224.6,51.9Z" stroke-width="20px" stroke="#808080" fill="none"></path></svg>
             </div>
         </label>
-        
+        </div>
+        </div>
+        </div>
+        <div class="Modal_main_content">
+            <div class="Modal_info">
+            <div class="Modal_user_div">
+            <div id="Modal_user_image_container"> <img width="50" height="50" src="https://img.icons8.com/ios/50/user--v1.png"> </div>
+            <div id="Modal_user" ></div>
+            </div>
+            <div class="Modal_created_at">
+            <div id="Modal_created_at_image_container"> <img width="50" height="50" src="https://img.icons8.com/ios/50/calendar--v1.png"> </div>
+            <div id="Modal_created_at" ></div>
+            </div>
+            </div>
+            <div class="Modal_desc_container">
+            <div id="Modal_desc" ></div>
+            </div>
+        </div>
         </div>
 <script>
 

@@ -148,28 +148,59 @@ if (isset($_POST['genre'])){
     <div id="myModal" class="modal">
         
         
-        <div class="modal-content">
+    <div class="modal-content">
         <span class="close">&times;</span>
+        <div id="Modal_id" ></div>
         <div id="Modal_title" ></div>
         <div class="Modal_img_container"><img id="Modal_image"></div>
-        <div id="Modal_genre" ></div>
-        <div id="Modal_rating" ></div>
-        <div id="Modal_id" ></div>
-        <div id="Modal_user" ></div>
-        <div id="Modal_time" ></div>
-        <div id="Modal_price" ></div>
-        <div id="Modal_length" ></div>
-        <div id="Modal_created_at" ></div>
-        <div id="Modal_desc" ></div>
-        <label class="like">
-            <input id="like" type="checkbox" data-post-id="">
-            <div class="checkmark">
-                <svg viewBox="0 0 256 256">
+        <div class="Modal_container">
+        <div class="Modal_ratings_container">
+        <div>
+            <div id="Modal_genre_image_container"> <img width="50" height="50" src="https://img.icons8.com/ios/50/image--v1.png"> </div>
+            <div id="Modal_genre"> </div>
+        </div>
+        <div>
+            <div id="Modal_rating_image_container"> <img width="50" height="50" src="https://img.icons8.com/ios/50/rating.png"> </div>
+            <div id="Modal_rating"></div>
+        </div>
+        <div>
+            <div id="Modal_time_image_container"> <img width="50" height="50" src="https://img.icons8.com/ios/50/time_2.png"> </div>
+            <div id="Modal_time" ></div>
+        </div>
+        <div>
+            <div id="Modal_price_image_container"> <img width="50" height="50" src="https://img.icons8.com/ios/50/price-tag-euro.png"> </div>
+            <div id="Modal_price" ></div>
+        </div>
+        <div>
+            <div id="Modal_length_image_container"> <img width="50" height="50" src="https://img.icons8.com/ios/50/trail--v2.png"> </div>
+            <div id="Modal_length" ></div>
+        </div>
+        <div class="like_container">
+            <label class="like">
+                <input id="like" type="checkbox" data-post-id="">
+                    <div class="checkmark">
+                    <svg viewBox="0 0 256 256">
                 <rect fill="none" height="256" width="256"></rect>
                 <path d="M224.6,51.9a59.5,59.5,0,0,0-43-19.9,60.5,60.5,0,0,0-44,17.6L128,59.1l-7.5-7.4C97.2,28.3,59.2,26.3,35.9,47.4a59.9,59.9,0,0,0-2.3,87l83.1,83.1a15.9,15.9,0,0,0,22.6,0l81-81C243.7,113.2,245.6,75.2,224.6,51.9Z" stroke-width="20px" stroke="#808080" fill="none"></path></svg>
             </div>
         </label>
-        
+        </div>
+        </div>
+        </div>
+        <div class="Modal_main_content">
+            <div class="Modal_info">
+            <div class="Modal_user_div">
+            <div id="Modal_user_image_container"> <img width="50" height="50" src="https://img.icons8.com/ios/50/user--v1.png"> </div>
+            <div id="Modal_user" ></div>
+            </div>
+            <div class="Modal_created_at">
+            <div id="Modal_created_at_image_container"> <img width="50" height="50" src="https://img.icons8.com/ios/50/calendar--v1.png"> </div>
+            <div id="Modal_created_at" ></div>
+            </div>
+            </div>
+            <div class="Modal_desc_container">
+            <div id="Modal_desc" ></div>
+            </div>
         </div>
 <script>
 

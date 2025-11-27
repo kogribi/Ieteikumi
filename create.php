@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
         echo "Please fill in all fields.";
     } else {
         $stmt = $conn->prepare("INSERT INTO recommendations (user, user_id, title, rating, genre, time, price, length, description, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("sisissdiss", $user, $user_id, $title, $rating, $genre, $time, $price, $length, $description, $imagePath);
+        $stmt->bind_param("sisissdsss", $user, $user_id, $title, $rating, $genre, $time, $price, $length, $description, $imagePath);
         $stmt->execute();
 
         header("Location: ieteikumi.php");
@@ -89,12 +89,12 @@ if (isset($_POST['submit'])) {
         <span>Laiks</span>
         </label>
         <label>
-        <input class="input" type="number" name="length" required>
+        <input class="input" type="number" step="0.01" name="length" required>
         <span>Garums</span>
         </label>
 
         <label>
-        <input class="input" type="number" step="0.00" name="price" required>  
+        <input class="input" step="0.01" type="decimal" step="0.00" name="price" required>  
         <span>Cena</span>
         </label>
 
@@ -106,7 +106,7 @@ if (isset($_POST['submit'])) {
         <label class="drop-container">
         <span class="drop-title">Speid šeit lai pievienotu bildi!</span>
     
-        <input class="input" type="file" name="image" accept="image/*" id="file-input">
+        <input class="input"  type="file" name="image" accept="image/*" id="file-input">
         </label>
         <input class="submit" type="submit" name="submit" value="Create Recommendation">
         <p class="signin">Aiziet <a href="ieteikumi.php">atpakaļ?</a> </p>
