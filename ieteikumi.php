@@ -21,8 +21,9 @@ if (isset($_POST['genre'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="ieteikumi.css" rel="stylesheet">
+    <meta name="description" content="Ieteikuki.lv ir vieta, kur var dalīties ar ieteikumiem!">
+    <title>Ieteikumi.lv</title>
+    <link rel="preload" href="ieteikumi.css" as="style" onload="this.rel='stylesheet'">
 </head>
 <body>
     <div class="min-h-screen max-w-full">
@@ -103,7 +104,7 @@ if (isset($_POST['genre'])){
             data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"
         > 
             <div class="images">
-                <img width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
+                <img alt="user_created" fetchpriority="high" width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
             </div>
             <div class="text">
                 <div class="small_title"><?php echo $rec['title'] ?></div>
@@ -138,7 +139,7 @@ if (isset($_POST['genre'])){
             data-created_at="<?php $date=new DateTime($rec['created_at']); echo htmlspecialchars(date_format($date,"Y-m-d"));?>"
             data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"> 
             <div class="images">
-                <img width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
+                <img alt="user_created" fetchpriority="high" width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
             </div>
             <div class="text">
                 <div class="small_title"><?php echo $rec['title'] ?></div>
@@ -173,7 +174,7 @@ if (isset($_POST['genre'])){
             data-created_at="<?php $date=new DateTime($rec['created_at']); echo htmlspecialchars(date_format($date,"Y-m-d")); ?>"
             data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"> 
             <div class="images">
-                <img width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
+                <img alt="user_created" fetchpriority="high" width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
             </div>
             <div class="text">
                 <div class="small_title"><?php echo $rec['title'] ?></div>
@@ -208,7 +209,7 @@ if (isset($_POST['genre'])){
             data-created_at="<?php $date=new DateTime($rec['created_at']); echo htmlspecialchars(date_format($date,"Y-m-d")); ?>"
             data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"> 
             <div class="images">
-                <img width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
+                <img alt="user_created" fetchpriority="high" width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
             </div>
             <div class="text">
                 <div class="small_title"><?php echo $rec['title'] ?></div>
@@ -243,13 +244,13 @@ if (isset($_POST['genre'])){
             data-created_at="<?php $date=new DateTime($rec['created_at']); echo htmlspecialchars(date_format($date,"Y-m-d")); ?>"
             data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"> 
             <div class="images">
-                <img width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
+                <img alt="user_created" fetchpriority="high" width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
             </div>
             <div class="text">
                 <div class="small_title"><?php echo $rec['title'] ?></div>
                 <div class="ratings">
                     <div class="rating">
-                        <img width="50" height="50" src="https://img.icons8.com/ios/50/rating.png" alt="rating"/><br>
+                        <img alt="user_created" width="50" height="50" src="https://img.icons8.com/ios/50/rating.png" alt="rating"/><br>
                         <div style="text-align:center;"><?php echo $rec['rating'] ?><img class="small_star" width="15" height="15" src="https://img.icons8.com/ios/50/star--v1.png" alt="star--v1"/></div>
                     </div>
                     <div class="genre">
@@ -278,7 +279,7 @@ if (isset($_POST['genre'])){
             data-created_at="<?php $date=new DateTime($rec['created_at']); echo htmlspecialchars(date_format($date,"Y-m-d"));?>"
             data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"> 
             <div class="images">
-                <img width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
+                <img alt="user_created" fetchpriority="high" width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
             </div>
             <div class="text">
                 <div class="small_title"><?php echo $rec['title'] ?></div>
@@ -313,7 +314,7 @@ if (isset($_POST['genre'])){
             data-created_at="<?php $date=new DateTime($rec['created_at']); echo htmlspecialchars(date_format($date,"Y-m-d")); ?>"
             data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"> 
             <div class="images">
-                <img width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
+                <img alt="user_created" fetchpriority="high" width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
             </div>
             <div class="text">
                 <div class="small_title"><?php echo $rec['title'] ?></div>
@@ -363,23 +364,23 @@ if (isset($_POST['genre'])){
         <div class="Modal_container">
         <div class="Modal_ratings_container">
         <div>
-            <div id="Modal_genre_image_container"> <img width="50" height="50" src="https://img.icons8.com/ios/50/image--v1.png"> </div>
+            <div id="Modal_genre_image_container"> <img width="50" height="50" src="https://img.icons8.com/ios/50/image--v1.png" alt="selection"> </div>
             <div id="Modal_genre"> </div>
         </div>
         <div>
-            <div id="Modal_rating_image_container"> <img width="50" height="50" src="https://img.icons8.com/ios/50/rating.png"> </div>
+            <div id="Modal_rating_image_container"> <img width="50" height="50" src="https://img.icons8.com/ios/50/rating.png" alt="selection"> </div>
             <div id="Modal_rating"></div>
         </div>
         <div>
-            <div id="Modal_time_image_container"> <img width="50" height="50" src="https://img.icons8.com/ios/50/time_2.png"> </div>
+            <div id="Modal_time_image_container"> <img width="50" height="50" src="https://img.icons8.com/ios/50/time_2.png" alt="selection"> </div>
             <div id="Modal_time" ></div>
         </div>
         <div>
-            <div id="Modal_price_image_container"> <img width="50" height="50" src="https://img.icons8.com/ios/50/price-tag-euro.png"> </div>
+            <div id="Modal_price_image_container"> <img width="50" height="50" src="https://img.icons8.com/ios/50/price-tag-euro.png" alt="selection"> </div>
             <div id="Modal_price" ></div>
         </div>
         <div>
-            <div id="Modal_length_image_container"> <img width="50" height="50" src="https://img.icons8.com/ios/50/trail--v2.png"> </div>
+            <div id="Modal_length_image_container"> <img width="50" height="50" src="https://img.icons8.com/ios/50/trail--v2.png" alt="selection"> </div>
             <div id="Modal_length" ></div>
         </div>
         <div class="like_container">
@@ -397,11 +398,11 @@ if (isset($_POST['genre'])){
         <div class="Modal_main_content">
             <div class="Modal_info">
             <div class="Modal_user_div">
-            <div id="Modal_user_image_container"> <img width="50" height="50" src="https://img.icons8.com/ios/50/user--v1.png"> </div>
+            <div id="Modal_user_image_container"> <img width="50" height="50" src="https://img.icons8.com/ios/50/user--v1.png" alt="selection"> </div>
             <div id="Modal_user" ></div>
             </div>
             <div class="Modal_created_at">
-            <div id="Modal_created_at_image_container"> <img width="50" height="50" src="https://img.icons8.com/ios/50/calendar--v1.png"> </div>
+            <div id="Modal_created_at_image_container"> <img width="50" height="50" src="https://img.icons8.com/ios/50/calendar--v1.png" alt="selection"> </div>
             <div id="Modal_created_at" ></div>
             </div>
             </div>

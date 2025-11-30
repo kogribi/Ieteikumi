@@ -24,16 +24,40 @@ if (isset($_POST['submit'])) {
     if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) { // $_FILES images temp place and $_FILES error= all the error info upload_err_ok=0(no errors)
         $fileTmpPath = $_FILES['image']['tmp_name']; // C:\laragon\www\project\tmp\php1234.tmp
         $fileName = $_FILES['image']['name']; // photo.jpg
-        $fileExtension = pathinfo($fileName, PATHINFO_EXTENSION); // only the jpg
+        $fileExtension = strtolower(pathinfo($fileName, PATHINFO_EXTENSION)); // only the jpg
 
-        $newFileName = uniqid() . '.' . $fileExtension; // random_bs.jpg
+        if($fileExtension=="jpg" || $fileExtension=="jpeg"){
+            $source = imagecreatefromjpeg($fileTmpPath); // saglaba image pec tipa
+        } else if($fileExtension=="png"){
+            $source = imagecreatefrompng($fileTmpPath); 
+        } else {
+            echo "nepareizs bildes tips";
+        }
+
+          if (!isset($source)) {
+        die("bilde nespeja ieladet ):");
+    }
+
+        $maxWidth = 1200;
+        $width = imagesx($source);
+        $height = imagesy($source);
+
+        if ($width > $maxWidth) {
+        $newHeight = ($maxWidth / $width) * $height;
+        $newImage = imagescale($source, $maxWidth, $newHeight); // save the new edited image
+        } else {
+        $newImage = $source;
+        }
+
+        $newFileName = uniqid() . '.webp'; // random_bs.webp
 
         $uploadDir = 'uploads/'; // folder place for uploads
-        $destPath = $uploadDir . $newFileName; // uploads/random_bs.jpg
+        $destPath = $uploadDir . $newFileName; // uploads/random_bs.webp
 
-        if(move_uploaded_file($fileTmpPath, $destPath)) { //C:\laragon\www\project\tmp\php1234.tmp -> upload/random_bs.jpg
-            $imagePath = $destPath; // upload/random_bs.jpg
-        }
+        imagewebp($newImage, $destPath, 80); // save as webp 80% quality
+        imagedestroy($source);
+        imagedestroy($newImage);
+        $imagePath = $destPath;
     } else {
         echo "nav vai nesanaca izmantot image";
     }
@@ -89,7 +113,7 @@ if (isset($_POST['submit'])) {
         <span>Laiks</span>
         </label>
         <label>
-        <input class="input" type="number" step="0.01" name="length" required>
+        <input class="input" type="text" step="0.01" name="length" required>
         <span>Garums</span>
         </label>
 
@@ -104,7 +128,7 @@ if (isset($_POST['submit'])) {
         </label>
 
         <label class="drop-container">
-        <span class="drop-title">Speid šeit lai pievienotu bildi!</span>
+        <span class="drop-title">Speid šeit lai pievienotu bildi! <br> (png, jpeg vai jpg)</span>
     
         <input class="input"  type="file" name="image" accept="image/*" id="file-input">
         </label>
