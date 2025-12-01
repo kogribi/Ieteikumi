@@ -89,7 +89,6 @@ if (isset($_POST['genre'])){
 <?php } ?>
     </div>
     </div>
-    <div class="profile_text">Esi sveicināts <?php echo $username; ?>!<br>Šeit bus redzami tevi izveidotie un patikāmie ieteikumi</div>
     <div class="profile_outer_content">
     <div class="content-title">Jūsu izveidotie ieteikumi:</div>
     <div class="content">
@@ -156,23 +155,23 @@ if (isset($_POST['genre'])){
         <div class="Modal_container">
         <div class="Modal_ratings_container">
         <div>
-            <div id="Modal_genre_image_container"> <img width="50" height="50" src="https://img.icons8.com/ios/50/image--v1.png"> </div>
+            <div id="Modal_genre_image_container"> <img src="https://img.icons8.com/ios/50/image--v1.png" alt="selection" class="Modal_rating_image"> </div>
             <div id="Modal_genre"> </div>
         </div>
         <div>
-            <div id="Modal_rating_image_container"> <img width="50" height="50" src="https://img.icons8.com/ios/50/rating.png"> </div>
+            <div id="Modal_rating_image_container"> <img  src="https://img.icons8.com/ios/50/rating.png" alt="selection" class="Modal_rating_image"> </div>
             <div id="Modal_rating"></div>
         </div>
         <div>
-            <div id="Modal_time_image_container"> <img width="50" height="50" src="https://img.icons8.com/ios/50/time_2.png"> </div>
+            <div id="Modal_time_image_container"> <img  src="https://img.icons8.com/ios/50/time_2.png" alt="selection" class="Modal_rating_image"> </div>
             <div id="Modal_time" ></div>
         </div>
         <div>
-            <div id="Modal_price_image_container"> <img width="50" height="50" src="https://img.icons8.com/ios/50/price-tag-euro.png"> </div>
+            <div id="Modal_price_image_container"> <img  src="https://img.icons8.com/ios/50/price-tag-euro.png" alt="selection" class="Modal_rating_image"> </div>
             <div id="Modal_price" ></div>
         </div>
         <div>
-            <div id="Modal_length_image_container"> <img width="50" height="50" src="https://img.icons8.com/ios/50/trail--v2.png"> </div>
+            <div id="Modal_length_image_container"> <img  src="https://img.icons8.com/ios/50/trail--v2.png" alt="selection" class="Modal_rating_image"> </div>
             <div id="Modal_length" ></div>
         </div>
         <div class="like_container">
