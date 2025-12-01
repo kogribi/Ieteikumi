@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'connect.php';
+require 'php\connect.php';
 $result = $conn->query("SELECT * FROM recommendations ORDER BY created_at DESC"); //connects to database, sends command to sql, gives object with rows info about columns by the query
 $recommendations = []; // array for the recomm
 while ($row = $result->fetch_assoc()) { // makes each row an associative array
@@ -23,7 +23,7 @@ if (isset($_POST['genre'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Ieteikuki.lv ir vieta, kur var dalīties ar ieteikumiem!">
     <title>Ieteikumi.lv</title>
-    <link rel="preload" href="ieteikumi.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="css/ieteikumi.css" as="style" onload="this.rel='stylesheet'">
 </head>
 <body>
     <div class="min-h-screen max-w-full">
@@ -32,15 +32,15 @@ if (isset($_POST['genre'])){
             Ieteikumi.lv
         </div>
         <div>
-        <a href="create.php"><button class="button_create"><span>Izveidot ieteikumu</span><img class="plus" width="25" height="25" src="https://img.icons8.com/ios/50/plus--v1.png" alt="home--v1"/></button></a>
+        <a href="php/create.php"><button class="button_create"><span>Izveidot ieteikumu</span><img class="plus" width="25" height="25" src="https://img.icons8.com/ios/50/plus--v1.png" alt="home--v1"/></button></a>
         </div>
         <div class="login_buttons">
             <?php if (!isset($_SESSION['user_id'])): ?>
-    <a href="register.php"><button class="boton-elegante"><span>Reģistrēties</span><img width="25" height="25" src="https://img.icons8.com/ios/50/add-user-male.png" alt="home--v1"/></button></a>
-    <a href="login.php"><button class="boton-elegante"><span>Pieteikties</span><img width="25" height="25" src="https://img.icons8.com/ios/50/login-rounded-right--v1.png" alt="home--v1"/></button></a>
+    <a href="php/register.php"><button class="boton-elegante"><span>Reģistrēties</span><img width="25" height="25" src="https://img.icons8.com/ios/50/add-user-male.png" alt="home--v1"/></button></a>
+    <a href="php/login.php"><button class="boton-elegante"><span>Pieteikties</span><img width="25" height="25" src="https://img.icons8.com/ios/50/login-rounded-right--v1.png" alt="home--v1"/></button></a>
 <?php else: ?>
     <a href="profile.php"><button class="boton-elegante"><span>Profils</span><img width="25" height="25" src="https://img.icons8.com/ios/50/user-male-circle--v1.png" alt="home--v1"/></button></a>
-    <a href="logout.php"><button class="boton-elegante"><span>Atteikties</span><img width="25" height="25" src="https://img.icons8.com/ios/50/exit--v1.png" alt="home--v1"/></button></a>
+    <a href="php/logout.php"><button class="boton-elegante"><span>Atteikties</span><img width="25" height="25" src="https://img.icons8.com/ios/50/exit--v1.png" alt="home--v1"/></button></a>
 <?php endif; ?>
         </div>
     </header>
@@ -458,7 +458,7 @@ items.forEach(function(item) {
             }
 
             
-            fetch('like.php', {
+            fetch('php/like.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: 'post_id=' + postId + '&liked=' + (liked ? 1 : 0)
@@ -467,7 +467,7 @@ items.forEach(function(item) {
             .then(function(data) {
                 console.log('Like updated:', data);
                 if (data=="Not logged in"){
-                    window.location.replace("http://localhost/ieteikumi/register.php");
+                    window.location.replace("http://localhost/ieteikumi/php/register.php");
                 }
             })
             .catch(function(err) {

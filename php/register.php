@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($stmt->execute()) {
                 $_SESSION['user_id'] = $conn->insert_id;
                 $_SESSION['username'] = $username;
-                header("Location: profile.php");
+                header("Location: ../profile.php");
                 exit;
             } else {
                 $errors[] = "DB error: ".$conn->error;
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html>
 <head>
     <meta charset="utf-8"><title>Register</title>
-    <link href="forms.css" rel="stylesheet">
+    <link href="../css/forms.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php foreach($errors as $e) echo "<p style='color:red;'>".htmlspecialchars($e)."</p>"; ?>
     <button type="submit" class="submit">Iesniegt</button>
     <p class="signin">Jau ir profils? <a href="login.php">Pieraksties!</a> </p>
-    <p class="signin">Aiziet <a href="ieteikumi.php">atpakaļ?</a> </p>
+    <p class="signin">Aiziet <a href="../ieteikumi.php">atpakaļ?</a> </p>
 </form>
 </body>
 </html>

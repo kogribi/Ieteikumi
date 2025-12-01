@@ -1,8 +1,8 @@
 <?php
 session_start();
-require 'connect.php';
+require 'php\connect.php';
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+    header("Location: php/login.php");
     exit;
 }
 $username = $_SESSION['username'];
@@ -35,7 +35,7 @@ if (isset($_POST['genre'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="profile.css" rel="stylesheet">
+    <link href="css/profile.css" rel="stylesheet">
 </head>
 <body>
     <div class="min-h-screen max-w-full">
@@ -44,7 +44,7 @@ if (isset($_POST['genre'])){
             <a href="ieteikumi.php">Ieteikumi.lv</a>
         </div>
         <div class="login_buttons">
-            <a href="logout.php"><button class="boton-elegante"><span>Atteikties</span><img width="25" height="25" src="https://img.icons8.com/ios/50/exit--v1.png" alt="home--v1"/></button></a>
+            <a href="php/logout.php"><button class="boton-elegante"><span>Atteikties</span><img width="25" height="25" src="https://img.icons8.com/ios/50/exit--v1.png" alt="home--v1"/></button></a>
         </div>
     </header>
     <main>
@@ -257,7 +257,7 @@ items.forEach(function(item) {
             }
 
             
-            fetch('like.php', {
+            fetch('php/like.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: 'post_id=' + postId + '&liked=' + (liked ? 1 : 0)

@@ -77,7 +77,7 @@ if (isset($_POST['submit'])) {
 <html>
 <head>
     <title>Create Recommendation</title>
-    <link href="create.css" rel="stylesheet">
+    <link href="../css/create.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -133,7 +133,7 @@ if (isset($_POST['submit'])) {
         <input class="input"  type="file" name="image" accept="image/*" id="file-input">
         </label>
         <input class="submit" type="submit" name="submit" value="Create Recommendation">
-        <p class="signin">Aiziet <a href="ieteikumi.php">atpakaļ?</a> </p>
+        <p class="signin">Aiziet <a href="../ieteikumi.php">atpakaļ?</a> </p>
     </form>
 </body>
 </html>
