@@ -28,7 +28,7 @@ CREATE TABLE `likes` (
   `post_id` int NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_like` (`user_id`,`post_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE `likes` (
 
 LOCK TABLES `likes` WRITE;
 /*!40000 ALTER TABLE `likes` DISABLE KEYS */;
-INSERT INTO `likes` VALUES (1,1,1);
+INSERT INTO `likes` VALUES (2,1,1);
 /*!40000 ALTER TABLE `likes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -62,7 +62,7 @@ CREATE TABLE `recommendations` (
   `title` varchar(100) NOT NULL,
   `image` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -71,7 +71,7 @@ CREATE TABLE `recommendations` (
 
 LOCK TABLES `recommendations` WRITE;
 /*!40000 ALTER TABLE `recommendations` DISABLE KEYS */;
-INSERT INTO `recommendations` VALUES (1,'Kaspars',1,8,'Produkti','0',0.00,'0','2025-11-30 17:45:28','6 versija no laragon ir briva un ir perfekta prieks iesacejiem','laragon','uploads/692c82b872481.webp');
+INSERT INTO `recommendations` VALUES (1,'Kaspars',1,8,'Produkti','0',0.00,'0','2025-11-30 17:45:28','6 versija no laragon ir briva un ir perfekta prieks iesacejiem','laragon','uploads/692c82b872481.webp'),(2,'Kaspars',1,6,'Produkti','0',1000.00,'0','2025-12-01 14:09:47','Kruze','Kruze','uploads/692da1aaeb333.webp');
 /*!40000 ALTER TABLE `recommendations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -112,4 +112,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-11-30 20:39:09
+-- Dump completed on 2025-12-01 22:32:31
