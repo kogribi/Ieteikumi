@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'php\connect.php';
+require 'php/connect.php';
 $result = $conn->query("SELECT * FROM recommendations ORDER BY created_at DESC"); //connects to database, sends command to sql, gives object with rows info about columns by the query
 $recommendations = []; // array for the recomm
 while ($row = $result->fetch_assoc()) { // makes each row an associative array

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'php\connect.php';
+require 'php/connect.php';
 if (!isset($_SESSION['user_id'])) {
     header("Location: php/login.php");
     exit;
