@@ -2,7 +2,7 @@
 session_start();
 require 'php/connect.php';
 if (!isset($_SESSION['user_id'])) {
-    header("Location: php/login.php");
+    header("Location: login.php");
     exit;
 }
 $username = $_SESSION['username'];
@@ -34,7 +34,7 @@ if (isset($_POST['genre'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Profile</title>
     <link href="css/profile.css" rel="stylesheet">
 </head>
 <body>

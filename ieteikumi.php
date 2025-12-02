@@ -77,13 +77,8 @@ if (isset($_POST['genre'])){
   </button>
 </form>
     </div>
-    <div>
-        <button type="submit" name="genre" value="Palidziba" class="sidebar-options">
-            <img width="25" height="25" src="https://img.icons8.com/ios/50/question-mark--v1.png" alt="home--v1"/> <span>Palīdzība</span>
-        </button>
-       <button type="submit" name="genre" value="Iestatijumi" class="sidebar-options">
-            <img width="25" height="25" src="https://img.icons8.com/ios/50/settings--v1.png" alt="cutlery"/> <span>Iestatijumi</span>
-        </button>
+    <div class="theme-container">
+    <input type="checkbox" class="theme-checkbox">
     </div>
     </div>
     <div class="outer_content">
