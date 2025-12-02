@@ -78,7 +78,53 @@ if (isset($_POST['genre'])){
 </form>
     </div>
     <div class="theme-container">
-    <input type="checkbox" class="theme-checkbox">
+    <input type="checkbox" class="theme-checkbox" id="checkbox">
+    <script>
+       const checkbox = document.getElementById('checkbox');
+const r = document.querySelector(':root');
+
+const darkTheme = {
+    '--blue': '#4da3ff', 
+    '--white': '#262626',
+    '--graywhite': '#1f1f1f',
+    '--gray': '#888888', 
+    '--gray-dark': '#e0e0e0', 
+    '--gray-medium': '#999999', 
+    '--gray-light': '#383838', 
+    '--gray-text': '#999999', 
+    '--gray-text-light': '#999999', 
+    '--red': '#FF5353', 
+    '--dark-bg': '#1a1a1a', 
+    '--background': '#1f1f1f', 
+    '--border-color': '#383838', 
+    '--modal-bg': '#262626', 
+    '--main-color': '#1f1f1f'
+};
+
+const lightTheme = {
+    '--white': '#ffffff',
+    '--graywhite': '#f0f0f0',
+    '--gray': '#aaa',
+    '--gray-dark': '#222',
+    '--gray-medium': '#4f4f4f',
+    '--gray-light': '#ddd',
+    '--red': '#FF5353',
+    '--dark-bg': '#2a2a2a',
+    '--background': '#f5f6fa',
+    '--border-color': '#e0e0e0',
+    '--modal-bg': '#fefefe',
+    '--main-color': '#f5f6fa',
+    '--blue': '#0077ff',
+    '--gray-text': 'black',
+    '--gray-text-light': 'black',  
+};
+checkbox.addEventListener('change', function() {
+    const theme = checkbox.checked ? darkTheme : lightTheme;
+    Object.entries(theme).forEach(([variable, value]) => {
+        r.style.setProperty(variable, value);
+    });
+});
+    </script>
     </div>
     </div>
     <div class="outer_content">
