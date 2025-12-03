@@ -34,7 +34,7 @@
 }
 
 body{
-    background-color: var(--gray-light);
+    background-color: var(--dark-bg);
     font-family: 'Inter', 'Poppins', sans-serif;
     justify-content: center;
     align-items: center;
@@ -157,6 +157,7 @@ body{
   color: var(--white);
   font-size: 16px;
   transform: .3s ease;
+  cursor: pointer;
 }
 
 .submit:hover {
