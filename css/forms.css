@@ -1,5 +1,40 @@
+:root {
+  --blue: #0077ff;
+  --white: #ffffff;
+  --graywhite: #f0f0f0;
+  --gray: #aaa;
+  --gray-dark: #222;
+  --gray-medium: #4f4f4f;
+  --gray-light: #ddd;
+  --gray-text: #333;
+  --gray-text-light: #555;
+  --red: #FF5353;
+  --dark-bg: #2a2a2a;
+  --background: #f5f6fa;
+  --border-color: #e0e0e0;
+  --modal-bg: #fefefe;
+  --main-color: #f5f6fa;
+}
+.darkmode{
+  --blue: #4da3ff;
+    --white: #262626;
+    --graywhite: #1f1f1f;
+    --gray: #888888;
+    --gray-dark: #e0e0e0;
+    --gray-medium: #999999 ;
+    --gray-light: #383838;
+    --gray-text: #999999;
+    --gray-text-light: #999999;
+    --red: #FF5353 ;
+    --dark-bg: #1a1a1a ;
+    --background: #1f1f1f ;
+    --border-color: #383838;
+    --modal-bg: #262626;
+    --main-color: #1f1f1f;
+}
+
 body{
-    background-color: lightgray;
+    background-color: var(--gray-light);
     font-family: 'Inter', 'Poppins', sans-serif;
     justify-content: center;
     align-items: center;
@@ -14,7 +49,7 @@ body{
   flex-direction: column;
   gap: 10px;
   max-width: 350px;
-  background-color: #fff;
+  background-color: var(--white);
   padding: 20px;
   border-radius: 20px;
   position: relative;
@@ -22,7 +57,7 @@ body{
 
 .title {
   font-size: 28px;
-  color: royalblue;
+  color: var(--blue);
   font-weight: 600;
   letter-spacing: -1px;
   position: relative;
@@ -38,13 +73,13 @@ body{
   width: 16px;
   border-radius: 50%;
   left: 0px;
-  background-color: royalblue;
+  background-color: var(--blue);
 }
 
 .title::before {
   width: 18px;
   height: 18px;
-  background-color: royalblue;
+  background-color: var(--blue);
 }
 
 .title::after {
@@ -63,11 +98,11 @@ body{
 }
 
 .signin a {
-  color: royalblue;
+  color: var(--blue);
 }
 
 .signin a:hover {
-  text-decoration: underline royalblue;
+  text-decoration: underline var(--blue);
 }
 
 .flex {
@@ -92,7 +127,7 @@ body{
   position: absolute;
   left: 10px;
   top: 15px;
-  color: grey;
+  color: var(--gray);
   font-size: 0.9em;
   cursor: text;
   transition: 0.3s ease;
@@ -116,10 +151,10 @@ body{
 .submit {
   border: none;
   outline: none;
-  background-color: royalblue;
+  background-color: var(--blue);
   padding: 10px;
   border-radius: 10px;
-  color: #fff;
+  color: var(--white);
   font-size: 16px;
   transform: .3s ease;
 }

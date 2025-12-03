@@ -46,6 +46,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+<script>
+        let darkmode = localStorage.getItem('darkmode')
+        const themeSwitch = document.getElementById('theme-switch')
+
+        const enableDarkmode = () => {
+            document.body.classList.add('darkmode')
+            localStorage.setItem('darkmode', 'active')
+        }
+
+        const disableDarkmode = () => {
+            document.body.classList.remove('darkmode')
+            localStorage.setItem('darkmode', null)
+        }
+
+        if(darkmode === "active") enableDarkmode()
+
+        themeSwitch.addEventListener("click", function() {
+            darkmode = localStorage.getItem('darkmode')
+            darkmode !== "active" ? enableDarkmode() : disableDarkmode()
+        })
+    </script>
 <form method="post" class="form">
     <p class="title">Reģistrēties </p>
     <p class="message">Reģistrējies lai varētu pilnīgi izmantot majaslapu! </p>

@@ -81,6 +81,27 @@ if (isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+<script>
+        let darkmode = localStorage.getItem('darkmode')
+        const themeSwitch = document.getElementById('theme-switch')
+
+        const enableDarkmode = () => {
+            document.body.classList.add('darkmode')
+            localStorage.setItem('darkmode', 'active')
+        }
+
+        const disableDarkmode = () => {
+            document.body.classList.remove('darkmode')
+            localStorage.setItem('darkmode', null)
+        }
+
+        if(darkmode === "active") enableDarkmode()
+
+        themeSwitch.addEventListener("click", function() {
+            darkmode = localStorage.getItem('darkmode')
+            darkmode !== "active" ? enableDarkmode() : disableDarkmode()
+        })
+    </script>
     <form class="form" method="POST" action="" enctype="multipart/form-data">
     <p class="title">Izveido ieteikumu! </p>
     <p class="message">Piepildi visu! <b>Ja kaut kas nav vajadzīgs ievadi 0!</b></p>

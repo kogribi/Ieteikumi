@@ -15,8 +15,45 @@
   --modal-bg: #fefefe;
   --main-color: #f5f6fa;
 }
+.darkmode{
+  --blue: #4da3ff;
+    --white: #262626;
+    --graywhite: #1f1f1f;
+    --gray: #888888;
+    --gray-dark: #e0e0e0;
+    --gray-medium: #999999 ;
+    --gray-light: #383838;
+    --gray-text: #999999;
+    --gray-text-light: #999999;
+    --red: #FF5353 ;
+    --dark-bg: #1a1a1a ;
+    --background: #1f1f1f ;
+    --border-color: #383838;
+    --modal-bg: #262626;
+    --main-color: #1f1f1f;
+}
 
-
+#theme-switch{
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--gray-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px var(--border-color);
+  cursor: pointer;
+}
+#theme-switch img:last-child{
+  display: none;
+}
+.darkmode #theme-switch img:first-child{
+  display: none;
+}
+.darkmode #theme-switch img:last-child{
+  display: block;
+}
 
 body {
   font-family: 'Inter', 'Poppins', sans-serif;
