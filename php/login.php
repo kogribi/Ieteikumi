@@ -39,7 +39,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 <script>
         let darkmode = localStorage.getItem('darkmode')
-        const themeSwitch = document.getElementById('theme-switch')
 
         const enableDarkmode = () => {
             document.body.classList.add('darkmode')
@@ -48,15 +47,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         const disableDarkmode = () => {
             document.body.classList.remove('darkmode')
-            localStorage.setItem('darkmode', null)
+            localStorage.setItem('darkmode', 'inactive')
         }
 
         if(darkmode === "active") enableDarkmode()
 
-        themeSwitch.addEventListener("click", function() {
-            darkmode = localStorage.getItem('darkmode')
-            darkmode !== "active" ? enableDarkmode() : disableDarkmode()
-        })
+       
     </script>
 
 <form method="post" class="form">

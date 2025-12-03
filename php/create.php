@@ -84,7 +84,6 @@ if (isset($_POST['submit'])) {
 <body>
 <script>
         let darkmode = localStorage.getItem('darkmode')
-        const themeSwitch = document.getElementById('theme-switch')
 
         const enableDarkmode = () => {
             document.body.classList.add('darkmode')
@@ -93,15 +92,11 @@ if (isset($_POST['submit'])) {
 
         const disableDarkmode = () => {
             document.body.classList.remove('darkmode')
-            localStorage.setItem('darkmode', null)
+            localStorage.setItem('darkmode', 'inactive')
         }
 
         if(darkmode === "active") enableDarkmode()
 
-        themeSwitch.addEventListener("click", function() {
-            darkmode = localStorage.getItem('darkmode')
-            darkmode !== "active" ? enableDarkmode() : disableDarkmode()
-        })
     </script>
     <form class="form" method="POST" action="" enctype="multipart/form-data">
     <p class="title">Izveido ieteikumu! </p>

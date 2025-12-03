@@ -93,7 +93,7 @@ if (isset($_POST['genre'])){
 
         const disableDarkmode = () => {
             document.body.classList.remove('darkmode')
-            localStorage.setItem('darkmode', null)
+            localStorage.setItem('darkmode', 'inactive')
         }
 
         if(darkmode === "active") enableDarkmode()

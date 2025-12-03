@@ -34,7 +34,7 @@
 }
 
 body{
-    background-color: var(--dark-bg);
+    background-color: var(--background);
     font-family: 'Inter', 'Poppins', sans-serif;
     justify-content: center;
     align-items: center;
