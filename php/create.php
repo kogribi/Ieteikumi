@@ -69,7 +69,7 @@ if (isset($_POST['submit'])) {
         $stmt->bind_param("sisissdsss", $user, $user_id, $title, $rating, $genre, $time, $price, $length, $description, $imagePath);
         $stmt->execute();
 
-        header("Location: ieteikumi.php");
+        header("Location: ../ieteikumi.php");
     }
 }
 ?>
