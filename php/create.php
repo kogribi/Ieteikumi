@@ -21,6 +21,7 @@ if (isset($_POST['submit'])) {
     $title = $_POST['title'];
     $length = $_POST['length'];
     $imagePath = NULL;
+    $imageErorrs = "";
     if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) { // $_FILES images temp place and $_FILES error= all the error info upload_err_ok=0(no errors)
         $fileTmpPath = $_FILES['image']['tmp_name']; // C:\laragon\www\project\tmp\php1234.tmp
         $fileName = $_FILES['image']['name']; // photo.jpg
@@ -31,13 +32,12 @@ if (isset($_POST['submit'])) {
         } else if($fileExtension=="png"){
             $source = imagecreatefrompng($fileTmpPath); 
         } else {
-            echo "nepareizs bildes tips";
+            $imageErorrs = "nepareizs bildes tips";
         }
 
-          if (!isset($source)) {
-        die("bilde nespeja ieladet ):");
-    }
+        
 
+    if ($imageErorrs==""){
         $maxWidth = 1200;
         $width = imagesx($source);
         $height = imagesy($source);
@@ -51,17 +51,18 @@ if (isset($_POST['submit'])) {
 
         $newFileName = uniqid() . '.webp'; // random_bs.webp
 
-        $uploadDir = 'uploads/'; // folder place for uploads
+        $uploadDir = '../uploads/'; // folder place for uploads
         $destPath = $uploadDir . $newFileName; // uploads/random_bs.webp
 
         imagewebp($newImage, $destPath, 80); // save as webp 80% quality
         imagedestroy($source);
         imagedestroy($newImage);
-        $imagePath = $destPath;
-    } else {
-        echo "nav vai nesanaca izmantot image";
+        $imagePath = str_replace("../","",$destPath);
     }
-
+    } else {
+        $imageErorrs = "nav vai nesanaca izmantot image";
+    }
+    if ($imageErorrs==""){
     if(empty($rating) || empty($genre) || empty($title) || empty($description)) {
         echo "Please fill in all fields.";
     } else {
@@ -70,7 +71,7 @@ if (isset($_POST['submit'])) {
         $stmt->execute();
 
         header("Location: ../ieteikumi.php");
-    }
+    }}
 }
 ?>
 <!DOCTYPE html>
@@ -153,6 +154,7 @@ if (isset($_POST['submit'])) {
     
         <input class="input"  type="file" name="image" accept="image/*" id="file-input">
         </label>
+        <em style="color: red"><?php if (isset($_POST['submit'])) { echo $imageErorrs;} ?></em>
         <input class="submit" type="submit" name="submit" value="Create Recommendation">
         <p class="signin">Aiziet <a href="../ieteikumi.php">atpakaļ?</a> </p>
     </form>
