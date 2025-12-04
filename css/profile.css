@@ -143,9 +143,9 @@ header {
 .boton-elegante {
   padding: 12px 28px;
   border: none;
-  border-radius: 30px;
-  background: linear-gradient(135deg, var(--blue), var(--blue));
-  color: var(--white);
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--blue),var(--blue) );
+  color: white;
   font-size: 1rem;
   cursor: pointer;
   font-weight: 600;
@@ -161,6 +161,11 @@ header {
   gap: 5px;
 }
 
+@media screen and (max-width: 800px){
+  .boton-elegante span{
+    display: none;
+  }
+}
 .boton-elegante::after {
   content: "";
   position: absolute;

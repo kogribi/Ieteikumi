@@ -60,7 +60,17 @@ if (isset($_POST['genre'])){
             <a href="ieteikumi.php">Ieteikumi.lv</a>
         </div>
         <div class="login_buttons">
+            <script>
+               function myFunction() {
+                    if (confirm("Vai tu esi parliecināts? (izdzēsis visus tavus datus uz mūžu!)")) {
+                       window.location.href = "php/delete_data.php";
+                    } else {
+                        
+                    }} 
+            </script>
+            <button onclick="myFunction()" class="boton-elegante"><span>Izdzēst datus</span><img width="25" height="25" src="https://img.icons8.com/ios/50/delete-database.png" alt="home--v1"/></button>
             <a href="php/logout.php"><button class="boton-elegante"><span>Atteikties</span><img width="25" height="25" src="https://img.icons8.com/ios/50/exit--v1.png" alt="home--v1"/></button></a>
+            
         </div>
     </header>
     <main>

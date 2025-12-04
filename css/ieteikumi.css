@@ -182,7 +182,11 @@ header {
   display: flex;
   gap: 5px;
 }
-
+@media screen and (max-width: 800px){
+  .boton-elegante span{
+    display: none;
+  }
+}
 .boton-elegante::after {
   content: "";
   position: absolute;
