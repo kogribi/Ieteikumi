@@ -7,7 +7,7 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-if (isset($_POST['post_id']) || isset($_SESSION['user_id'])) {
+if (isset($_POST['post_id']) || $_SESSION['user_id']==$_POST['user_id']) {
     $user_id = $_SESSION['user_id'];
     $post_id = $_POST['post_id'];
 
@@ -19,7 +19,6 @@ if (isset($_POST['post_id']) || isset($_SESSION['user_id'])) {
     $stmt->bind_param("i", $post_id);
     $stmt->execute();
 
-    header("Location: ../ieteikumi.php");
 
 
 }

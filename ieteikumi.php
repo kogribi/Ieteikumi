@@ -121,7 +121,7 @@ if (isset($_POST['genre'])){
             data-length="<?php echo htmlspecialchars($rec['length']); ?>"
             data-created_at="<?php $date=new DateTime($rec['created_at']); echo htmlspecialchars(date_format($date,"Y-m-d")); ?>"
             data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"
-        > 
+            data-user_id="<?php echo htmlspecialchars($rec['user_id'] ?? ''); ?>"> 
             <div class="images">
                 <img alt="user_created" fetchpriority="high" width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
             </div>
@@ -156,7 +156,8 @@ if (isset($_POST['genre'])){
             data-price="<?php echo htmlspecialchars($rec['price']); ?>"
             data-length="<?php echo htmlspecialchars($rec['length']); ?>"
             data-created_at="<?php $date=new DateTime($rec['created_at']); echo htmlspecialchars(date_format($date,"Y-m-d"));?>"
-            data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"> 
+            data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"
+            data-user_id="<?php echo htmlspecialchars($rec['user_id'] ?? ''); ?>"> 
             <div class="images">
                 <img alt="user_created" fetchpriority="high" width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
             </div>
@@ -191,7 +192,8 @@ if (isset($_POST['genre'])){
             data-price="<?php echo htmlspecialchars($rec['price']); ?>"
             data-length="<?php echo htmlspecialchars($rec['length']); ?>"
             data-created_at="<?php $date=new DateTime($rec['created_at']); echo htmlspecialchars(date_format($date,"Y-m-d")); ?>"
-            data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"> 
+            data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"
+            data-user_id="<?php echo htmlspecialchars($rec['user_id'] ?? ''); ?>"> 
             <div class="images">
                 <img alt="user_created" fetchpriority="high" width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
             </div>
@@ -226,7 +228,8 @@ if (isset($_POST['genre'])){
             data-price="<?php echo htmlspecialchars($rec['price']); ?>"
             data-length="<?php echo htmlspecialchars($rec['length']); ?>"
             data-created_at="<?php $date=new DateTime($rec['created_at']); echo htmlspecialchars(date_format($date,"Y-m-d")); ?>"
-            data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"> 
+            data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"
+            data-user_id="<?php echo htmlspecialchars($rec['user_id'] ?? ''); ?>"> 
             <div class="images">
                 <img alt="user_created" fetchpriority="high" width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
             </div>
@@ -261,7 +264,8 @@ if (isset($_POST['genre'])){
             data-price="<?php echo htmlspecialchars($rec['price']); ?>"
             data-length="<?php echo htmlspecialchars($rec['length']); ?>"
             data-created_at="<?php $date=new DateTime($rec['created_at']); echo htmlspecialchars(date_format($date,"Y-m-d")); ?>"
-            data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"> 
+            data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"
+            data-user_id="<?php echo htmlspecialchars($rec['user_id'] ?? ''); ?>"> 
             <div class="images">
                 <img alt="user_created" fetchpriority="high" width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
             </div>
@@ -296,7 +300,8 @@ if (isset($_POST['genre'])){
             data-price="<?php echo htmlspecialchars($rec['price']); ?>"
             data-length="<?php echo htmlspecialchars($rec['length']); ?>"
             data-created_at="<?php $date=new DateTime($rec['created_at']); echo htmlspecialchars(date_format($date,"Y-m-d"));?>"
-            data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"> 
+            data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"
+            data-user_id="<?php echo htmlspecialchars($rec['user_id'] ?? ''); ?>"> 
             <div class="images">
                 <img alt="user_created" fetchpriority="high" width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
             </div>
@@ -385,9 +390,6 @@ if (isset($_POST['genre'])){
         <div class="Modal_container">
         <div class="Modal_ratings_container">
         <div class="delete-post">
-        <script>
-        
-        </script>
         <button class="btn" id="delete" data-post-id="" data-user-id="">
             <svg viewBox="0 0 15 17.5" height="17.5" width="15" xmlns="http://www.w3.org/2000/svg" class="icon">
                 <path transform="translate(-2.5 -1.25)" d="M15,18.75H5A1.251,1.251,0,0,1,3.75,17.5V5H2.5V3.75h15V5H16.25V17.5A1.251,1.251,0,0,1,15,18.75ZM5,5V17.5H15V5Zm7.5,10H11.25V7.5H12.5V15ZM8.75,15H7.5V7.5H8.75V15ZM12.5,2.5h-5V1.25h5V2.5Z" id="Fill"></path>
@@ -443,7 +445,7 @@ if (isset($_POST['genre'])){
         </div>
         </div>
 <script>
-
+const CurrentUserId = "<?php if(isset($_SESSION['user_id'])) {echo $_SESSION['user_id'];}else{echo "false";} ?>";
 var items = document.querySelectorAll('.item');
 
 items.forEach(function(item) {
@@ -464,6 +466,11 @@ items.forEach(function(item) {
         document.getElementById('Modal_desc').textContent = item.dataset.desc;
         document.getElementById('delete').dataset.postId = id;
         document.getElementById('delete').dataset.userId = item.dataset.user_id;
+        var PostUserId = document.getElementById('delete').dataset.userId;
+
+        if(CurrentUserId !== PostUserId){
+            document.getElementById("delete").style.display = "none";
+        }
 
         
         var likeCheckbox = document.getElementById('like');
@@ -508,10 +515,10 @@ items.forEach(function(item) {
             });
         });
         var deletePost = document.getElementById('delete');
-        deletePost.addEventListener('click', function() {
-        postId = document.getElementById('delete').dataset.postId
-        userId = document.getElementById('delete').dataset.userId
-        fetch('php/delete_post.php', {
+        deletePost.addEventListener('click', async function() {
+        let postId = this.dataset.postId;
+        let userId = this.dataset.userId;
+         await fetch('php/delete_post.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: 'post_id=' + postId + '&user_id=' + userId
