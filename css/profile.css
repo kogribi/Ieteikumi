@@ -244,6 +244,16 @@ padding: 10px;
 border-radius: 10px;
 box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
+@media screen and (max-width: 800px){
+  .profile_outer_content{
+    height: auto;
+    max-height: 80dvh; 
+
+  }
+  .content{
+    height: 60%;
+  }
+}
 .item{
   display: flex;
   flex-direction: column;

@@ -252,6 +252,9 @@ main{
 
 }
 @media screen and (max-width: 600px){
+  .sidebar-options span{
+    display: none;
+  }
   .button_create span{
     display: none;
   }

@@ -70,6 +70,7 @@ if (isset($_POST['genre'])){
 
   <button type="submit" name="genre" value="Products" class="sidebar-options<?php if ($_SESSION['selected_genre']==='Products'){echo " active";} ?>">
     <img width="25" height="25" src="https://img.icons8.com/ios/50/product--v1.png" alt="product"/> <span>Produkti</span>
+  </button>
 
     <button type="submit" name="genre" value="Activity" class="sidebar-options<?php if ($_SESSION['selected_genre']==='Activity'){echo " active";} ?>">
     <img width="25" height="25" src="https://img.icons8.com/ios/50/running--v1.png" alt="product"/> <span>Aktivitāte</span>
@@ -129,16 +130,16 @@ if (isset($_POST['genre'])){
                 <div class="small_title"><?php echo $rec['title'] ?></div>
                 <div class="ratings">
                     <div class="rating">
-                        <img width="50" height="50" src="https://img.icons8.com/ios/50/rating.png" alt="rating"/><br>
+                        <img width="50" height="50" src="https://img.icons8.com/ios/50/rating.png" alt="rating"/>
                         <div style="text-align:center;"><?php echo $rec['rating'] ?><img class="small_star" width="15" height="15" src="https://img.icons8.com/ios/50/star--v1.png" alt="star--v1"/></div>
                     </div>
                     <div class="genre">
                         <img width="50" height="50" src="<?php if($rec['genre']==='Ēdiens'){echo "https://img.icons8.com/ios/50/cutlery.png";}if($rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/running--v1.png";}if($rec['genre']==='Video'){echo "https://img.icons8.com/ios/50/video-call.png";}if($rec['genre']==='Spēles'){echo "https://img.icons8.com/ios/50/controller.png";}if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/national-park.png";}if($rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/product--v1.png";}
-                          ?>" alt="cutlery"/><br>
+                          ?>" alt="cutlery"/>
                         <div style="text-align:center;"><?php echo $rec['genre'] ?></div>
                     </div>
                     <div class="time">
-                        <img width="50" height="50" src="<?php if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/trail--v2.png";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/time_2.png";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/price-tag-euro.png";} ?>" alt="time_2"/><br>
+                        <img width="50" height="50" src="<?php if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/trail--v2.png";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/time_2.png";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/price-tag-euro.png";} ?>" alt="time_2"/>
                         <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'] . "km";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'];} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
                     </div>
                 </div>
@@ -165,16 +166,16 @@ if (isset($_POST['genre'])){
                 <div class="small_title"><?php echo $rec['title'] ?></div>
                 <div class="ratings">
                     <div class="rating">
-                        <img width="50" height="50" src="https://img.icons8.com/ios/50/rating.png" alt="rating"/><br>
+                        <img width="50" height="50" src="https://img.icons8.com/ios/50/rating.png" alt="rating"/>
                         <div style="text-align:center;"><?php echo $rec['rating'] ?><img class="small_star" width="15" height="15" src="https://img.icons8.com/ios/50/star--v1.png" alt="star--v1"/></div>
                     </div>
                     <div class="genre">
                         <img width="50" height="50" src="<?php if($rec['genre']==='Ēdiens'){echo "https://img.icons8.com/ios/50/cutlery.png";}if($rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/running--v1.png";}if($rec['genre']==='Video'){echo "https://img.icons8.com/ios/50/video-call.png";}if($rec['genre']==='Spēles'){echo "https://img.icons8.com/ios/50/controller.png";}if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/national-park.png";}if($rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/product--v1.png";}
-                          ?>" alt="cutlery"/><br>
+                          ?>" alt="cutlery"/>
                         <div style="text-align:center;"><?php echo $rec['genre'] ?></div>
                     </div>
                     <div class="time">
-                        <img width="50" height="50" src="<?php if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/trail--v2.png";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/time_2.png";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/price-tag-euro.png";} ?>" alt="time_2"/><br>
+                        <img width="50" height="50" src="<?php if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/trail--v2.png";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/time_2.png";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/price-tag-euro.png";} ?>" alt="time_2"/>
                         <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'] ."km";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'];} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
                     </div>
                 </div>
@@ -201,16 +202,16 @@ if (isset($_POST['genre'])){
                 <div class="small_title"><?php echo $rec['title'] ?></div>
                 <div class="ratings">
                     <div class="rating">
-                        <img width="50" height="50" src="https://img.icons8.com/ios/50/rating.png" alt="rating"/><br>
+                        <img width="50" height="50" src="https://img.icons8.com/ios/50/rating.png" alt="rating"/>
                         <div style="text-align:center;"><?php echo $rec['rating'] ?><img class="small_star" width="15" height="15" src="https://img.icons8.com/ios/50/star--v1.png" alt="star--v1"/></div>
                     </div>
                     <div class="genre">
                         <img width="50" height="50" src="<?php if($rec['genre']==='Ēdiens'){echo "https://img.icons8.com/ios/50/cutlery.png";}if($rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/running--v1.png";}if($rec['genre']==='Video'){echo "https://img.icons8.com/ios/50/video-call.png";}if($rec['genre']==='Spēles'){echo "https://img.icons8.com/ios/50/controller.png";}if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/national-park.png";}if($rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/product--v1.png";}
-                          ?>" alt="cutlery"/><br>
+                          ?>" alt="cutlery"/>
                         <div style="text-align:center;"><?php echo $rec['genre'] ?></div>
                     </div>
                     <div class="time">
-                        <img width="50" height="50" src="<?php if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/trail--v2.png";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/time_2.png";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/price-tag-euro.png";} ?>" alt="time_2"/><br>
+                        <img width="50" height="50" src="<?php if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/trail--v2.png";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/time_2.png";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/price-tag-euro.png";} ?>" alt="time_2"/>
                         <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'] . "km";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'];} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
                     </div>
                 </div>
@@ -237,16 +238,16 @@ if (isset($_POST['genre'])){
                 <div class="small_title"><?php echo $rec['title'] ?></div>
                 <div class="ratings">
                     <div class="rating">
-                        <img width="50" height="50" src="https://img.icons8.com/ios/50/rating.png" alt="rating"/><br>
+                        <img width="50" height="50" src="https://img.icons8.com/ios/50/rating.png" alt="rating"/>
                         <div style="text-align:center;"><?php echo $rec['rating'] ?><img class="small_star" width="15" height="15" src="https://img.icons8.com/ios/50/star--v1.png" alt="star--v1"/></div>
                     </div>
                     <div class="genre">
                         <img width="50" height="50" src="<?php if($rec['genre']==='Ēdiens'){echo "https://img.icons8.com/ios/50/cutlery.png";}if($rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/running--v1.png";}if($rec['genre']==='Video'){echo "https://img.icons8.com/ios/50/video-call.png";}if($rec['genre']==='Spēles'){echo "https://img.icons8.com/ios/50/controller.png";}if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/national-park.png";}if($rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/product--v1.png";}
-                          ?>" alt="cutlery"/><br>
+                          ?>" alt="cutlery"/>
                         <div style="text-align:center;"><?php echo $rec['genre'] ?></div>
                     </div>
                     <div class="time">
-                        <img width="50" height="50" src="<?php if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/trail--v2.png";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/time_2.png";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/price-tag-euro.png";} ?>" alt="time_2"/><br>
+                        <img width="50" height="50" src="<?php if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/trail--v2.png";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/time_2.png";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/price-tag-euro.png";} ?>" alt="time_2"/>
                         <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'] . "km";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'];} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
                     </div>
                 </div>
@@ -273,16 +274,16 @@ if (isset($_POST['genre'])){
                 <div class="small_title"><?php echo $rec['title'] ?></div>
                 <div class="ratings">
                     <div class="rating">
-                        <img alt="user_created" width="50" height="50" src="https://img.icons8.com/ios/50/rating.png" alt="rating"/><br>
+                        <img alt="user_created" width="50" height="50" src="https://img.icons8.com/ios/50/rating.png" alt="rating"/>
                         <div style="text-align:center;"><?php echo $rec['rating'] ?><img class="small_star" width="15" height="15" src="https://img.icons8.com/ios/50/star--v1.png" alt="star--v1"/></div>
                     </div>
                     <div class="genre">
                         <img width="50" height="50" src="<?php if($rec['genre']==='Ēdiens'){echo "https://img.icons8.com/ios/50/cutlery.png";}if($rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/running--v1.png";}if($rec['genre']==='Video'){echo "https://img.icons8.com/ios/50/video-call.png";}if($rec['genre']==='Spēles'){echo "https://img.icons8.com/ios/50/controller.png";}if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/national-park.png";}if($rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/product--v1.png";}
-                          ?>" alt="cutlery"/><br>
+                          ?>" alt="cutlery"/>
                         <div style="text-align:center;"><?php echo $rec['genre'] ?></div>
                     </div>
                     <div class="time">
-                        <img width="50" height="50" src="<?php if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/trail--v2.png";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/time_2.png";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/price-tag-euro.png";} ?>" alt="time_2"/><br>
+                        <img width="50" height="50" src="<?php if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/trail--v2.png";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/time_2.png";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/price-tag-euro.png";} ?>" alt="time_2"/>
                         <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'] . "km";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'];} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
                     </div>
                 </div>
@@ -309,16 +310,16 @@ if (isset($_POST['genre'])){
                 <div class="small_title"><?php echo $rec['title'] ?></div>
                 <div class="ratings">
                     <div class="rating">
-                        <img width="50" height="50" src="https://img.icons8.com/ios/50/rating.png" alt="rating"/><br>
+                        <img width="50" height="50" src="https://img.icons8.com/ios/50/rating.png" alt="rating"/>
                         <div style="text-align:center;"><?php echo $rec['rating'] ?><img class="small_star" width="15" height="15" src="https://img.icons8.com/ios/50/star--v1.png" alt="star--v1"/></div>
                     </div>
                     <div class="genre">
                         <img width="50" height="50" src="<?php if($rec['genre']==='Ēdiens'){echo "https://img.icons8.com/ios/50/cutlery.png";}if($rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/running--v1.png";}if($rec['genre']==='Video'){echo "https://img.icons8.com/ios/50/video-call.png";}if($rec['genre']==='Spēles'){echo "https://img.icons8.com/ios/50/controller.png";}if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/national-park.png";}if($rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/product--v1.png";}
-                          ?>" alt="cutlery"/><br>
+                          ?>" alt="cutlery"/>
                         <div style="text-align:center;"><?php echo $rec['genre'] ?></div>
                     </div>
                     <div class="time">
-                        <img width="50" height="50" src="<?php if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/trail--v2.png";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/time_2.png";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/price-tag-euro.png";} ?>" alt="time_2"/><br>
+                        <img width="50" height="50" src="<?php if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/trail--v2.png";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/time_2.png";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/price-tag-euro.png";} ?>" alt="time_2"/>
                         <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'] . "km";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'];} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
                     </div>
                 </div>
@@ -346,16 +347,16 @@ if (isset($_POST['genre'])){
                 <div class="small_title"><?php echo $rec['title'] ?></div>
                 <div class="ratings">
                     <div class="rating">
-                        <img width="50" height="50" src="https://img.icons8.com/ios/50/rating.png" alt="rating"/><br>
+                        <img width="50" height="50" src="https://img.icons8.com/ios/50/rating.png" alt="rating"/>
                         <div style="text-align:center;"><?php echo $rec['rating'] ?><img class="small_star" width="15" height="15" src="https://img.icons8.com/ios/50/star--v1.png" alt="star--v1"/></div>
                     </div>
                     <div class="genre">
                         <img width="50" height="50" src="<?php if($rec['genre']==='Ēdiens'){echo "https://img.icons8.com/ios/50/cutlery.png";}if($rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/running--v1.png";}if($rec['genre']==='Video'){echo "https://img.icons8.com/ios/50/video-call.png";}if($rec['genre']==='Spēles'){echo "https://img.icons8.com/ios/50/controller.png";}if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/national-park.png";}if($rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/product--v1.png";}
-                          ?>" alt="cutlery"/><br>
+                          ?>" alt="cutlery"/>
                         <div style="text-align:center;"><?php echo $rec['genre'] ?></div>
                     </div>
                     <div class="time">
-                        <img width="50" height="50" src="<?php if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/trail--v2.png";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/time_2.png";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/price-tag-euro.png";} ?>" alt="time_2"/><br>
+                        <img width="50" height="50" src="<?php if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/trail--v2.png";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/time_2.png";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/price-tag-euro.png";} ?>" alt="time_2"/>
                         <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'] . "km";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'];} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
                     </div>
                 </div>
