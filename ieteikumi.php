@@ -140,7 +140,7 @@ if (isset($_POST['genre'])){
                     </div>
                     <div class="time">
                         <img width="50" height="50" src="<?php if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/trail--v2.png";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/time_2.png";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/price-tag-euro.png";} ?>" alt="time_2"/>
-                        <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'] . "km";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'];} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
+                        <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'];} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'];} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
                     </div>
                 </div>
             </div>
@@ -176,7 +176,7 @@ if (isset($_POST['genre'])){
                     </div>
                     <div class="time">
                         <img width="50" height="50" src="<?php if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/trail--v2.png";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/time_2.png";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/price-tag-euro.png";} ?>" alt="time_2"/>
-                        <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'] ."km";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'];} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
+                        <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'];} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'];} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
                     </div>
                 </div>
             </div>
@@ -212,7 +212,7 @@ if (isset($_POST['genre'])){
                     </div>
                     <div class="time">
                         <img width="50" height="50" src="<?php if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/trail--v2.png";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/time_2.png";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/price-tag-euro.png";} ?>" alt="time_2"/>
-                        <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'] . "km";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'];} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
+                        <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'];} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'];} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
                     </div>
                 </div>
             </div>
@@ -248,7 +248,7 @@ if (isset($_POST['genre'])){
                     </div>
                     <div class="time">
                         <img width="50" height="50" src="<?php if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/trail--v2.png";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/time_2.png";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/price-tag-euro.png";} ?>" alt="time_2"/>
-                        <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'] . "km";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'];} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
+                        <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'];} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'];} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
                     </div>
                 </div>
             </div>
@@ -284,7 +284,7 @@ if (isset($_POST['genre'])){
                     </div>
                     <div class="time">
                         <img width="50" height="50" src="<?php if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/trail--v2.png";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/time_2.png";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/price-tag-euro.png";} ?>" alt="time_2"/>
-                        <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'] . "km";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'];} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
+                        <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'];} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'];} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
                     </div>
                 </div>
             </div>
@@ -320,7 +320,7 @@ if (isset($_POST['genre'])){
                     </div>
                     <div class="time">
                         <img width="50" height="50" src="<?php if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/trail--v2.png";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/time_2.png";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/price-tag-euro.png";} ?>" alt="time_2"/>
-                        <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'] . "km";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'];} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
+                        <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'];} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'];} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
                     </div>
                 </div>
             </div>
@@ -357,7 +357,7 @@ if (isset($_POST['genre'])){
                     </div>
                     <div class="time">
                         <img width="50" height="50" src="<?php if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/trail--v2.png";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/time_2.png";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/price-tag-euro.png";} ?>" alt="time_2"/>
-                        <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'] . "km";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'];} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
+                        <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'];} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'];} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
                     </div>
                 </div>
             </div>

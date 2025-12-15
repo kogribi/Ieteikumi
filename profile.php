@@ -108,7 +108,7 @@ if (isset($_POST['genre'])){
                 </div>
                 <div class="time">
                     <img width="50" height="50" src="<?php if($UserLikedRecomendation['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/trail--v2.png";} if($UserLikedRecomendation['genre']==='Video' || $UserLikedRecomendation['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/time_2.png";} if($UserLikedRecomendation['genre']==='Ēdiens' || $UserLikedRecomendation['genre']==='Spēles' || $UserLikedRecomendation['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/price-tag-euro.png";} ?>" alt="time_2"/>
-                    <div style="text-align:center;"><?php if($UserLikedRecomendation['genre']==='Vietas'){echo $UserLikedRecomendation['length'] . "km";} if($UserLikedRecomendation['genre']==='Video' || $UserLikedRecomendation['genre']==='Aktivitāte'){echo $UserLikedRecomendation['time'] . "h";} if($UserLikedRecomendation['genre']==='Ēdiens' || $UserLikedRecomendation['genre']==='Spēles' || $UserLikedRecomendation['genre']==='Produkti'){echo $UserLikedRecomendation['price'];} ?></div>
+                    <div style="text-align:center;"><?php if($UserLikedRecomendation['genre']==='Vietas'){echo $UserLikedRecomendation['length'];} if($UserLikedRecomendation['genre']==='Video' || $UserLikedRecomendation['genre']==='Aktivitāte'){echo $UserLikedRecomendation['time'];} if($UserLikedRecomendation['genre']==='Ēdiens' || $UserLikedRecomendation['genre']==='Spēles' || $UserLikedRecomendation['genre']==='Produkti'){echo $UserLikedRecomendation['price'];} ?></div>
                 </div>
             </div>
         </div>
@@ -150,7 +150,7 @@ if (isset($_POST['genre'])){
                 </div>
                 <div class="time">
                     <img width="50" height="50" src="<?php if($UserCreatedRecomendation['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/trail--v2.png";} if($UserCreatedRecomendation['genre']==='Video' || $UserCreatedRecomendation['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/time_2.png";} if($UserCreatedRecomendation['genre']==='Ēdiens' || $UserCreatedRecomendation['genre']==='Spēles' || $UserCreatedRecomendation['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/price-tag-euro.png";} ?>" alt="time_2"/>
-                    <div style="text-align:center;"><?php if($UserCreatedRecomendation['genre']==='Vietas'){echo $UserCreatedRecomendation['length'] . "km";} if($UserCreatedRecomendation['genre']==='Video' || $UserCreatedRecomendation['genre']==='Aktivitāte'){echo $UserCreatedRecomendation['time'] . "h";} if($UserCreatedRecomendation['genre']==='Ēdiens' || $UserCreatedRecomendation['genre']==='Spēles' || $UserCreatedRecomendation['genre']==='Produkti'){echo $UserCreatedRecomendation['price'];} ?></div>
+                    <div style="text-align:center;"><?php if($UserCreatedRecomendation['genre']==='Vietas'){echo $UserCreatedRecomendation['length'];} if($UserCreatedRecomendation['genre']==='Video' || $UserCreatedRecomendation['genre']==='Aktivitāte'){echo $UserCreatedRecomendation['time'];} if($UserCreatedRecomendation['genre']==='Ēdiens' || $UserCreatedRecomendation['genre']==='Spēles' || $UserCreatedRecomendation['genre']==='Produkti'){echo $UserCreatedRecomendation['price'];} ?></div>
                 </div>
             </div>
         </div>

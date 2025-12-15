@@ -14,7 +14,8 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
+CREATE DATABASE recommendations_db;
+USE recommendations_db;
 --
 -- Table structure for table `likes`
 --
@@ -28,7 +29,7 @@ CREATE TABLE `likes` (
   `post_id` int NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_like` (`user_id`,`post_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +38,7 @@ CREATE TABLE `likes` (
 
 LOCK TABLES `likes` WRITE;
 /*!40000 ALTER TABLE `likes` DISABLE KEYS */;
-INSERT INTO `likes` VALUES (2,1,1);
+INSERT INTO `likes` VALUES (3,1,21);
 /*!40000 ALTER TABLE `likes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -62,7 +63,7 @@ CREATE TABLE `recommendations` (
   `title` varchar(100) NOT NULL,
   `image` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -71,7 +72,7 @@ CREATE TABLE `recommendations` (
 
 LOCK TABLES `recommendations` WRITE;
 /*!40000 ALTER TABLE `recommendations` DISABLE KEYS */;
-INSERT INTO `recommendations` VALUES (1,'Kaspars',1,8,'Produkti','0',0.00,'0','2025-11-30 17:45:28','6 versija no laragon ir briva un ir perfekta prieks iesacejiem','laragon','uploads/692c82b872481.webp'),(2,'Kaspars',1,6,'Produkti','0',1000.00,'0','2025-12-01 14:09:47','Kruze','Kruze','uploads/692da1aaeb333.webp');
+INSERT INTO `recommendations` VALUES (4,'Kaspars',1,1,'Video','1',1.00,'1','2025-12-15 10:49:08','1','1','uploads/693fe7a48d955.webp'),(5,'Kaspars',1,1,'Ēdiens','1',1.00,'1','2025-12-15 10:49:15','1','1','uploads/693fe7abe1518.webp'),(6,'Kaspars',1,1,'Ēdiens','1',1.00,'1','2025-12-15 10:49:23','1','1','uploads/693fe7b3bc9b5.webp'),(7,'Kaspars',1,1,'Video','1',1.00,'1','2025-12-15 10:49:32','1','1','uploads/693fe7bc0d824.webp'),(8,'Kaspars',1,1,'Ēdiens','1',1.00,'1','2025-12-15 10:49:43','1','1','uploads/693fe7c7b241b.webp'),(9,'Kaspars',1,1,'Ēdiens','1',1.00,'1','2025-12-15 10:49:51','1','1','uploads/693fe7cfa58a5.webp'),(10,'Kaspars',1,1,'Ēdiens','1',1.00,'1','2025-12-15 10:50:00','1','1','uploads/693fe7d848b7c.webp'),(11,'Kaspars',1,1,'Ēdiens','1',1.00,'1','2025-12-15 10:50:08','1','1','uploads/693fe7e0677c6.webp'),(12,'Kaspars',1,1,'Ēdiens','1',1.00,'1','2025-12-15 10:50:16','1','1','uploads/693fe7e8761bc.webp'),(13,'Kaspars',1,1,'Ēdiens','1',1.00,'1','2025-12-15 10:50:28','1','1','uploads/693fe7f432388.webp'),(14,'Kaspars',1,1,'Video','1',1.00,'1','2025-12-15 10:50:36','1','1','uploads/693fe7fc53439.webp'),(15,'Kaspars',1,1,'Ēdiens','1',1.00,'1','2025-12-15 10:50:44','1','1','uploads/693fe8045efff.webp'),(16,'Kaspars',1,1,'Ēdiens','1',1.00,'1','2025-12-15 10:50:54','1','1','uploads/693fe80e68b7c.webp'),(17,'Kaspars',1,1,'Ēdiens','1',1.00,'1','2025-12-15 10:51:02','1','1','uploads/693fe8167da4e.webp'),(18,'Kaspars',1,1,'Ēdiens','1',1.00,'1','2025-12-15 10:51:11','1','1','uploads/693fe81f102cc.webp'),(19,'Kaspars',1,1,'Ēdiens','1',1.00,'1','2025-12-15 10:51:23','1','1','uploads/693fe82bc92d0.webp'),(20,'Kaspars',1,1,'Ēdiens','1',1.00,'1','2025-12-15 10:51:36','1','1','uploads/693fe83831018.webp'),(21,'Kaspars',1,8,'Video','123',123.00,'123','2025-12-15 10:52:38','123','231','uploads/693fe876e6062.webp');
 /*!40000 ALTER TABLE `recommendations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -112,4 +113,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-12-01 22:32:31
+-- Dump completed on 2025-12-15 13:36:24
