@@ -264,6 +264,8 @@ items.forEach(function(item) {
         console.log(CurrentUserId);
         if(CurrentUserId !== PostUserId){
             document.getElementById("delete").style.display = "none";
+        } else {
+            document.getElementById("delete").style.display = "block";
         }
         
         var likeCheckbox = document.getElementById('like');
