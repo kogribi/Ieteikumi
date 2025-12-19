@@ -28,6 +28,9 @@ Users can create an account, log in, and submit suggestions such as foods, activ
   <li>Start the server in Laragon</li>
   <li>Open the project in your browser (example: http://localhost/Ieteikumi)</li>
 </ol> 
+<h3>Links to examples</h3>
+Video - https://www.capcut.com/sv2/ZSHKLrQeSGcmu-cuJvD/ <br>
+Documentation - https://docs.google.com/document/d/1uJ9rpBjD0tmfEnrzZLYq6Sn7DEce9UBnwUQ9OJUFDyA/edit?usp=sharing
 
 <h2>Latviešu</h2>
 <h3>Projekta nosaukums</h3>
@@ -58,3 +61,6 @@ Users can create an account, log in, and submit suggestions such as foods, activ
   <li>Palaidiet serveri Laragonā</li>
   <li>Atveriet projektu savā pārlūkprogrammā (piemērs: http://localhost/Ieteikumi)</li>
 </ol>
+<h3>Saites uz piemēriem</h3>
+Video - https://www.capcut.com/sv2/ZSHKLrQeSGcmu-cuJvD/ <br>
+Dokumentacija - https://docs.google.com/document/d/1uJ9rpBjD0tmfEnrzZLYq6Sn7DEce9UBnwUQ9OJUFDyA/edit?usp=sharing
