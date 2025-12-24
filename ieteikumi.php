@@ -471,6 +471,8 @@ items.forEach(function(item) {
 
         if(CurrentUserId !== PostUserId){
             document.getElementById("delete").style.display = "none";
+        }else{
+            document.getElementById("delete").style.display = "block";
         }
 
         
