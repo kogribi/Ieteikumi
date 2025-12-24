@@ -510,7 +510,7 @@ items.forEach(function(item) {
             .then(function(data) {
                 console.log('Like updated:', data);
                 if (data=="Not logged in"){
-                    window.location.replace("http://localhost/ieteikumi/php/register.php");
+                    window.location.replace("php/register.php");
                 }
             })
             .catch(function(err) {

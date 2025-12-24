@@ -2,5 +2,5 @@
 session_start();
 $_SESSION = [];
 session_destroy();
-header("Location: ../ieteikumi.php");
+header("Location: ../index.php");
 exit;

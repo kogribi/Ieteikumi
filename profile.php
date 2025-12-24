@@ -57,7 +57,7 @@ if (isset($_POST['genre'])){
     <div class="min-h-screen max-w-full">
     <header class="header">
         <div class="title">
-            <a href="ieteikumi.php">Ieteikumi.lv</a>
+            <a href="index.php">Ieteikumi.lv</a>
         </div>
         <div class="login_buttons">
             <script>

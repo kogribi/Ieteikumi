@@ -28,5 +28,5 @@ if (isset($_SESSION['user_id'])) {
     $stmt->bind_param("i", $user_id);
     $stmt->execute();
 
-    header("Location: ../ieteikumi.php");
+    header("Location: ../index.php");
 }

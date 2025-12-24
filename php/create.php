@@ -70,7 +70,7 @@ if (isset($_POST['submit'])) {
         $stmt->bind_param("sisissdsss", $user, $user_id, $title, $rating, $genre, $time, $price, $length, $description, $imagePath);
         $stmt->execute();
 
-        header("Location: ../ieteikumi.php");
+        header("Location: ../index.php");
     }}
 }
 ?>
@@ -151,7 +151,7 @@ if (isset($_POST['submit'])) {
         </label>
         <em style="color: red"><?php if (isset($_POST['submit'])) { echo $imageErorrs;} ?></em>
         <input class="submit" type="submit" name="submit" value="Create Recommendation">
-        <p class="signin">Aiziet <a href="../ieteikumi.php">atpakaļ?</a> </p>
+        <p class="signin">Aiziet <a href="../index.php">atpakaļ?</a> </p>
     </form>
 </body>
 </html>

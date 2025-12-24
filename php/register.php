@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php foreach($errors as $e) echo "<p style='color:red;'>".htmlspecialchars($e)."</p>"; ?>
     <button type="submit" class="submit">Iesniegt</button>
     <p class="signin">Jau ir profils? <a href="login.php">Pieraksties!</a> </p>
-    <p class="signin">Aiziet <a href="../ieteikumi.php">atpakaļ?</a> </p>
+    <p class="signin">Aiziet <a href="../index.php">atpakaļ?</a> </p>
 </form>
 </body>
 </html>
