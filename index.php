@@ -1,5 +1,7 @@
 <?php
 session_start();
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 require 'php/connect.php';
 $result = $conn->query("SELECT * FROM recommendations ORDER BY created_at DESC"); //connects to database, sends command to sql, gives object with rows info about columns by the query
 $recommendations = []; // array for the recomm
