@@ -3,7 +3,7 @@ session_start();
 require 'connect.php';
 
 if (!isset($_SESSION['user_id'])) {
-    echo 'Not logged in';
+    echo 'Nav pieteicies';
     exit;
 }
 
@@ -18,7 +18,4 @@ if (isset($_POST['post_id']) && $_SESSION['user_id']==$_POST['user_id']) {
     $stmt = $conn->prepare("DELETE FROM recommendations WHERE id=?");
     $stmt->bind_param("i", $post_id);
     $stmt->execute();
-
-
-
 }

@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email'] ?? '');
     $password = $_POST['password'] ?? '';
 
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = "Enter a valid email.";
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = "Ievadiet derīgu e-pastu.";
 
     if (empty($errors)) {
         $stmt = $conn->prepare("SELECT id, username, password_hash FROM users WHERE email=? LIMIT 1");
@@ -21,23 +21,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 header("Location: ../profile.php");
                 exit;
             } else {
-                $errors[] = "Wrong credentials.";
+                $errors[] = "Nepareizi dati.";
             }
         } else {
-            $errors[] = "Wrong credentials.";
+            $errors[] = "Nepareizi dati.";
         }
     }
 }
 ?>
 <!doctype html>
-<html>
+<html lang="lv">
 <head>
-    <meta charset="utf-8"><title>Login</title>
+    <meta charset="utf-8">
+    <title>Pieteikties</title>
     <link href="../css/forms.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<script>
+    <script>
         let darkmode = localStorage.getItem('darkmode')
 
         const enableDarkmode = () => {
@@ -55,21 +56,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
        
     </script>
 
-<form method="post" class="form">
-    <p class="title">Pieraksties </p>
-    <p class="message">Pieraksties, lai izmantotu majaslapu. </p>
-    <label>
-  <input name="email" type="email"  required class="input">
-  <span>Email</span>
-    </label>
-    <label>
-  <input name="password" type="password"  required class="input">
-  <span>Parole</span>
-    </label>
-  <button type="submit" class="submit">Login</button>
-  <?php foreach($errors as $e) echo "<p style='color:red;'>".htmlspecialchars($e)."</p>"; ?>
-  <p class="signin">Izveido profilu šeit! <a href="register.php">Reģistrēties</a> </p>
-  <p class="signin">Aiziet <a href="../index.php">atpakaļ?</a> </p>
-</form>
+    <form method="post" class="form">
+        <p class="title">Pieraksties </p>
+        <p class="message">Pieraksties, lai izmantotu majaslapu. </p>
+        <label>
+            <input name="email" type="email"  required class="input">
+            <span>E-pasts</span>
+        </label>
+        <label>
+            <input name="password" type="password"  required class="input">
+            <span>Parole</span>
+        </label>
+        <button type="submit" class="submit">Pieteikties</button>
+        <?php foreach($errors as $e) echo "<p style='color:red;'>".htmlspecialchars($e)."</p>"; ?>
+        <p class="signin">Izveido profilu šeit! <a href="register.php">Reģistrēties</a> </p>
+        <p class="signin">Aiziet <a href="../index.php">atpakaļ?</a> </p>
+    </form>
 </body>
 </html>

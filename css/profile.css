@@ -358,11 +358,37 @@ box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 .Modal_info{
-  min-width:90px;
+  min-width:120px;
   margin-right: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+#Modal_genre_image_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#Modal_rating_image_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#Modal_time_image_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#Modal_price_image_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#Modal_length_image_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .Modal_user_div{
@@ -459,13 +485,6 @@ box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   height: 100%;
 }
 
-.Modal_info{
-  min-width:90px;
-  margin-right: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
 .Modal_desc_container{
   width: 100%;
   min-height: 200px;

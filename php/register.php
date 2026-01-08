@@ -39,14 +39,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 <!doctype html>
-<html>
+<html lang="lv">
 <head>
-    <meta charset="utf-8"><title>Register</title>
+    <meta charset="utf-8">
+    <title>Reģistrēties</title>
     <link href="../css/forms.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<script>
+    <script>
         let darkmode = localStorage.getItem('darkmode')
 
         const enableDarkmode = () => {
@@ -63,31 +64,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
        
     </script>
-<form method="post" class="form">
-    <p class="title">Reģistrēties </p>
-    <p class="message">Reģistrējies lai varētu pilnīgi izmantot majaslapu! </p>
-    <label>
+    <form method="post" class="form">
+        <p class="title">Reģistrēties </p>
+        <p class="message">Reģistrējies lai varētu pilnīgi izmantot majaslapu! </p>
+        <label>
             <input required="" placeholder="" type="text" class="input" name="username">
             <span>Lietotāj vards</span>
-    </label>
+        </label>
 
-    <label>
-        <input name="email" required="" placeholder="" type="email" class="input">
-        <span>Email</span>
-    </label> 
+        <label>
+            <input name="email" required="" placeholder="" type="email" class="input">
+            <span>E-pasts</span>
+        </label> 
         
-    <label>
-        <input name="password" required="" placeholder="" type="password" class="input">
-        <span>Parole</span>
-    </label>
-    <label>
-        <input name="password2" required="" placeholder="" type="password" class="input">
-        <span>Atkartot paroli</span>
-    </label>
-    <?php foreach($errors as $e) echo "<p style='color:red;'>".htmlspecialchars($e)."</p>"; ?>
-    <button type="submit" class="submit">Iesniegt</button>
-    <p class="signin">Jau ir profils? <a href="login.php">Pieraksties!</a> </p>
-    <p class="signin">Aiziet <a href="../index.php">atpakaļ?</a> </p>
-</form>
+        <label>
+            <input name="password" required="" placeholder="" type="password" class="input">
+            <span>Parole</span>
+        </label>
+        <label>
+            <input name="password2" required="" placeholder="" type="password" class="input">
+            <span>Atkartot paroli</span>
+        </label>
+        <?php foreach($errors as $e) echo "<p style='color:red;'>".htmlspecialchars($e)."</p>"; ?>
+        <button type="submit" class="submit">Iesniegt</button>
+        <p class="signin">Jau ir profils? <a href="login.php">Pieraksties!</a> </p>
+        <p class="signin">Aiziet <a href="../index.php">atpakaļ?</a> </p>
+    </form>
 </body>
 </html>

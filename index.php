@@ -19,7 +19,7 @@ if (isset($_POST['genre'])){
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="lv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,62 +29,88 @@ if (isset($_POST['genre'])){
 </head>
 <body>
     <div class="min-h-screen max-w-full">
-    <header class="header">
-        <div class="title">
-            Ieteikumi.lv
-        </div>
-        <div>
-        <a href="php/create.php"><button class="button_create"><span>Izveidot ieteikumu</span><img class="plus" width="25" height="25" src="https://img.icons8.com/ios/50/plus--v1.png" alt="home--v1"/></button></a>
-        </div>
-        <div class="login_buttons">
-            <?php if (!isset($_SESSION['user_id'])): ?>
-    <a href="php/register.php"><button class="boton-elegante"><span>Reģistrēties</span><img width="25" height="25" src="https://img.icons8.com/ios/50/add-user-male.png" alt="home--v1"/></button></a>
-    <a href="php/login.php"><button class="boton-elegante"><span>Pieteikties</span><img width="25" height="25" src="https://img.icons8.com/ios/50/login-rounded-right--v1.png" alt="home--v1"/></button></a>
-<?php else: ?>
-    <a href="profile.php"><button class="boton-elegante"><span>Profils</span><img width="25" height="25" src="https://img.icons8.com/ios/50/user-male-circle--v1.png" alt="home--v1"/></button></a>
-    <a href="php/logout.php"><button class="boton-elegante"><span>Atteikties</span><img width="25" height="25" src="https://img.icons8.com/ios/50/exit--v1.png" alt="home--v1"/></button></a>
-<?php endif; ?>
-        </div>
-    </header>
-    <main>
-    <div class="sidebar">
-    <div>
-<form method="post">
-  <button type="submit" name="genre" value="Home" class="sidebar-options<?php if ($_SESSION['selected_genre']==='Home'){echo " active";} ?>">
-    <img width="25" height="25" src="https://img.icons8.com/ios/50/home--v1.png" alt="home--v1"/> <span>Sākums</span>
-  </button>
+        <header class="header">
+            <div class="title">
+                Ieteikumi.lv
+            </div>
+            <div>
+                <a href="php/create.php">
+                    <button class="button_create">
+                        <span>Izveidot ieteikumu</span>
+                        <img class="plus" width="25" height="25" src="https://img.icons8.com/ios/50/plus--v1.png" alt="home--v1"/>
+                    </button>
+                </a>
+            </div>
+            <div class="login_buttons">
+                <?php if (!isset($_SESSION['user_id'])): ?>
+                    <a href="php/register.php">
+                        <button class="boton-elegante">
+                            <span>Reģistrēties</span>
+                            <img width="25" height="25" src="https://img.icons8.com/ios/50/add-user-male.png" alt="home--v1"/>
+                        </button>
+                    </a>
+                    <a href="php/login.php">
+                        <button class="boton-elegante">
+                            <span>Pieteikties</span>
+                            <img width="25" height="25" src="https://img.icons8.com/ios/50/login-rounded-right--v1.png" alt="home--v1"/>
+                        </button>
+                    </a>
+                <?php else: ?>
+                    <a href="profile.php">
+                        <button class="boton-elegante">
+                            <span>Profils</span>
+                            <img width="25" height="25" src="https://img.icons8.com/ios/50/user-male-circle--v1.png" alt="home--v1"/>
+                        </button>
+                    </a>
+                    <a href="php/logout.php">
+                        <button class="boton-elegante">
+                            <span>Atteikties</span>
+                            <img width="25" height="25" src="https://img.icons8.com/ios/50/exit--v1.png" alt="home--v1"/>
+                        </button>
+                    </a>
+                <?php endif; ?>
+            </div>
+        </header>
+        <main>
+            <div class="sidebar">
+                <div>
+                    <form method="post">
+                        <button type="submit" name="genre" value="Home" class="sidebar-options<?php if ($_SESSION['selected_genre']==='Home'){echo " active";} ?>">
+                            <img width="25" height="25" src="https://img.icons8.com/ios/50/home--v1.png" alt="home--v1"/> <span>Sākums</span>
+                        </button>
 
-  <button type="submit" name="genre" value="Food" class="sidebar-options<?php if ($_SESSION['selected_genre']==='Food'){echo " active";} ?>">
-    <img width="25" height="25" src="https://img.icons8.com/ios/50/cutlery.png" alt="cutlery"/> <span>Ēdieni</span>
-  </button>
+                        <button type="submit" name="genre" value="Food" class="sidebar-options<?php if ($_SESSION['selected_genre']==='Food'){echo " active";} ?>">
+                            <img width="25" height="25" src="https://img.icons8.com/ios/50/cutlery.png" alt="cutlery"/> <span>Ēdieni</span>
+                        </button>
 
-  <button type="submit" name="genre" value="Video" class="sidebar-options<?php if ($_SESSION['selected_genre']==='Video'){echo " active";} ?>">
-    <img width="25" height="25" src="https://img.icons8.com/ios/50/video-call.png" alt="video"/> <span>Video</span>
-  </button>
+                        <button type="submit" name="genre" value="Video" class="sidebar-options<?php if ($_SESSION['selected_genre']==='Video'){echo " active";} ?>">
+                            <img width="25" height="25" src="https://img.icons8.com/ios/50/video-call.png" alt="video"/> <span>Video</span>
+                        </button>
 
-  <button type="submit" name="genre" value="Games" class="sidebar-options<?php if ($_SESSION['selected_genre']==='Games'){echo " active";} ?>">
-    <img width="25" height="25" src="https://img.icons8.com/ios/50/controller.png" alt="games"/> <span>Spēles</span>
-  </button>
+                        <button type="submit" name="genre" value="Games" class="sidebar-options<?php if ($_SESSION['selected_genre']==='Games'){echo " active";} ?>">
+                            <img width="25" height="25" src="https://img.icons8.com/ios/50/controller.png" alt="games"/> <span>Spēles</span>
+                        </button>
 
-  <button type="submit" name="genre" value="Places" class="sidebar-options<?php if ($_SESSION['selected_genre']==='Places'){echo " active";} ?>">
-    <img width="25" height="25" src="https://img.icons8.com/ios/50/national-park.png" alt="park"/> <span>Vietas</span>
-  </button>
+                        <button type="submit" name="genre" value="Places" class="sidebar-options<?php if ($_SESSION['selected_genre']==='Places'){echo " active";} ?>">
+                            <img width="25" height="25" src="https://img.icons8.com/ios/50/national-park.png" alt="park"/> <span>Vietas</span>
+                        </button>
 
-  <button type="submit" name="genre" value="Products" class="sidebar-options<?php if ($_SESSION['selected_genre']==='Products'){echo " active";} ?>">
-    <img width="25" height="25" src="https://img.icons8.com/ios/50/product--v1.png" alt="product"/> <span>Produkti</span>
-  </button>
+                        <button type="submit" name="genre" value="Products" class="sidebar-options<?php if ($_SESSION['selected_genre']==='Products'){echo " active";} ?>">
+                            <img width="25" height="25" src="https://img.icons8.com/ios/50/product--v1.png" alt="product"/> <span>Produkti</span>
+                        </button>
 
-    <button type="submit" name="genre" value="Activity" class="sidebar-options<?php if ($_SESSION['selected_genre']==='Activity'){echo " active";} ?>">
-    <img width="25" height="25" src="https://img.icons8.com/ios/50/running--v1.png" alt="product"/> <span>Aktivitāte</span>
-    
-  </button>
-</form>
-    </div>
-    <div style="place-items: center;">
-    <button id="theme-switch">
-    <img width="25" height="25" src="https://img.icons8.com/ios/50/sun--v1.png" alt="sun--v1"/>
-    <img width="25" height="25" src="https://img.icons8.com/ios/50/do-not-disturb-2.png" alt="do-not-disturb-2"/>
-    </button>
+                        <button type="submit" name="genre" value="Activity" class="sidebar-options<?php if ($_SESSION['selected_genre']==='Activity'){echo " active";} ?>">
+                            <img width="25" height="25" src="https://img.icons8.com/ios/50/running--v1.png" alt="product"/> <span>Aktivitāte</span>
+                        </button>
+                    </form>
+                </div>
+            
+                <div style="place-items: center;">
+                    <button id="theme-switch">
+                        <img width="25" height="25" src="https://img.icons8.com/ios/50/sun--v1.png" alt="sun--v1"/>
+                        <img width="25" height="25" src="https://img.icons8.com/ios/50/do-not-disturb-2.png" alt="do-not-disturb-2"/>
+                    </button>
+            </div>
     <script>
         let darkmode = localStorage.getItem('darkmode')
         const themeSwitch = document.getElementById('theme-switch')
@@ -106,71 +132,71 @@ if (isset($_POST['genre'])){
             darkmode !== "active" ? enableDarkmode() : disableDarkmode()
         })
     </script>
-    </div>
-    </div>
-    <div class="outer_content">
-    <div class="content">
-        <?php foreach ($recommendations as $rec){ ?> <!-- go through every item in array one by one and store each of them in $rec -->
-            <?php if ($_SESSION['selected_genre']==='Home') { ?>
-        <div class="item"  
-            data-title="<?php echo htmlspecialchars($rec['title']); ?>"
-            data-image="<?php echo htmlspecialchars($rec['image'] ?? 'https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg'); ?>"
-            data-genre="<?php echo htmlspecialchars($rec['genre']); ?>"
-            data-rating="<?php echo htmlspecialchars($rec['rating']); ?>"
-            data-id="<?php echo htmlspecialchars($rec['id']); ?>"
-            data-user="<?php echo htmlspecialchars($rec['user']); ?>"
-            data-time="<?php echo htmlspecialchars($rec['time']); ?>"
-            data-price="<?php echo htmlspecialchars($rec['price']); ?>"
-            data-length="<?php echo htmlspecialchars($rec['length']); ?>"
-            data-created_at="<?php $date=new DateTime($rec['created_at']); echo htmlspecialchars(date_format($date,"Y-m-d")); ?>"
-            data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"
-            data-user_id="<?php echo htmlspecialchars($rec['user_id'] ?? ''); ?>"> 
-            <div class="images">
-                <img alt="user_created" fetchpriority="high" width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
             </div>
-            <div class="text">
-                <div class="small_title"><?php echo $rec['title'] ?></div>
-                <div class="ratings">
-                    <div class="rating">
-                        <img width="50" height="50" src="https://img.icons8.com/ios/50/rating.png" alt="rating"/>
-                        <div style="text-align:center;"><?php echo $rec['rating'] ?><img class="small_star" width="15" height="15" src="https://img.icons8.com/ios/50/star--v1.png" alt="star--v1"/></div>
-                    </div>
-                    <div class="genre">
-                        <img width="50" height="50" src="<?php if($rec['genre']==='Ēdiens'){echo "https://img.icons8.com/ios/50/cutlery.png";}if($rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/running--v1.png";}if($rec['genre']==='Video'){echo "https://img.icons8.com/ios/50/video-call.png";}if($rec['genre']==='Spēles'){echo "https://img.icons8.com/ios/50/controller.png";}if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/national-park.png";}if($rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/product--v1.png";}
+            <div class="outer_content">
+                <div class="content">
+                    <?php foreach ($recommendations as $rec) { ?> <!-- go through every item in array one by one and store each of them in $rec -->
+                        <?php if ($_SESSION['selected_genre'] === 'Home') { ?>
+                            <div class="item"
+                                data-title="<?php echo htmlspecialchars($rec['title']); ?>"
+                                data-image="<?php echo htmlspecialchars($rec['image'] ?? 'https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg'); ?>"
+                                data-genre="<?php echo htmlspecialchars($rec['genre']); ?>"
+                                data-rating="<?php echo htmlspecialchars($rec['rating']); ?>"
+                                data-id="<?php echo htmlspecialchars($rec['id']); ?>"
+                                data-user="<?php echo htmlspecialchars($rec['user']); ?>"
+                                data-time="<?php echo htmlspecialchars($rec['time']); ?>"
+                                data-price="<?php echo htmlspecialchars($rec['price']); ?>"
+                                data-length="<?php echo htmlspecialchars($rec['length']); ?>"
+                                data-created_at="<?php $date=new DateTime($rec['created_at']); echo htmlspecialchars(date_format($date,"Y-m-d")); ?>"
+                                data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"
+                                data-user_id="<?php echo htmlspecialchars($rec['user_id'] ?? ''); ?>">
+                                <div class="images">
+                                    <img alt="user_created" fetchpriority="high" width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
+                                </div>
+                                <div class="text">
+                                    <div class="small_title"><?php echo $rec['title'] ?></div>
+                                    <div class="ratings">
+                                        <div class="rating">
+                                            <img width="50" height="50" src="https://img.icons8.com/ios/50/rating.png" alt="rating"/>
+                                            <div style="text-align:center;"><?php echo $rec['rating'] ?><img class="small_star" width="15" height="15" src="https://img.icons8.com/ios/50/star--v1.png" alt="star--v1"/></div>
+                                        </div>
+                                        <div class="genre">
+                                            <img width="50" height="50" src="<?php if($rec['genre']==='Ēdiens'){echo "https://img.icons8.com/ios/50/cutlery.png";}if($rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/running--v1.png";}if($rec['genre']==='Video'){echo "https://img.icons8.com/ios/50/video-call.png";}if($rec['genre']==='Spēles'){echo "https://img.icons8.com/ios/50/controller.png";}if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/national-park.png";}if($rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/product--v1.png";}
                           ?>" alt="cutlery"/>
-                        <div style="text-align:center;"><?php echo $rec['genre'] ?></div>
-                    </div>
-                    <div class="time">
-                        <img width="50" height="50" src="<?php if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/trail--v2.png";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/time_2.png";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/price-tag-euro.png";} ?>" alt="time_2"/>
-                        <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'];} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'];} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <?php } ?>
-        <?php if ($_SESSION['selected_genre']==='Food' && $rec['genre']==='Ēdiens') { ?>
-            <div class="item" data-title="<?php echo htmlspecialchars($rec['title']); ?>"
-            data-image="<?php echo htmlspecialchars($rec['image'] ?? 'https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg'); ?>"
-            data-genre="<?php echo htmlspecialchars($rec['genre']); ?>"
-            data-rating="<?php echo htmlspecialchars($rec['rating']); ?>"
-            data-id="<?php echo htmlspecialchars($rec['id']); ?>"
-            data-user="<?php echo htmlspecialchars($rec['user']); ?>"
-            data-time="<?php echo htmlspecialchars($rec['time']); ?>"
-            data-price="<?php echo htmlspecialchars($rec['price']); ?>"
-            data-length="<?php echo htmlspecialchars($rec['length']); ?>"
-            data-created_at="<?php $date=new DateTime($rec['created_at']); echo htmlspecialchars(date_format($date,"Y-m-d"));?>"
-            data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"
-            data-user_id="<?php echo htmlspecialchars($rec['user_id'] ?? ''); ?>"> 
-            <div class="images">
-                <img alt="user_created" fetchpriority="high" width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
-            </div>
-            <div class="text">
-                <div class="small_title"><?php echo $rec['title'] ?></div>
-                <div class="ratings">
-                    <div class="rating">
-                        <img width="50" height="50" src="https://img.icons8.com/ios/50/rating.png" alt="rating"/>
-                        <div style="text-align:center;"><?php echo $rec['rating'] ?><img class="small_star" width="15" height="15" src="https://img.icons8.com/ios/50/star--v1.png" alt="star--v1"/></div>
-                    </div>
+                                            <div style="text-align:center;"><?php echo $rec['genre'] ?></div>
+                                        </div>
+                                        <div class="time">
+                                            <img width="50" height="50" src="<?php if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/trail--v2.png";} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/time_2.png";} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/price-tag-euro.png";} ?>" alt="time_2"/>
+                                            <div style="text-align:center;"><?php if($rec['genre']==='Vietas'){echo $rec['length'];} if($rec['genre']==='Video' || $rec['genre']==='Aktivitāte'){echo $rec['time'];} if($rec['genre']==='Ēdiens' || $rec['genre']==='Spēles' || $rec['genre']==='Produkti'){echo $rec['price'];} ?></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php } ?>
+                        <?php if ($_SESSION['selected_genre']==='Food' && $rec['genre']==='Ēdiens') { ?>
+                            <div class="item"
+                                data-title="<?php echo htmlspecialchars($rec['title']); ?>"
+                                data-image="<?php echo htmlspecialchars($rec['image'] ?? 'https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg'); ?>"
+                                data-genre="<?php echo htmlspecialchars($rec['genre']); ?>"
+                                data-rating="<?php echo htmlspecialchars($rec['rating']); ?>"
+                                data-id="<?php echo htmlspecialchars($rec['id']); ?>"
+                                data-user="<?php echo htmlspecialchars($rec['user']); ?>"
+                                data-time="<?php echo htmlspecialchars($rec['time']); ?>"
+                                data-price="<?php echo htmlspecialchars($rec['price']); ?>"
+                                data-length="<?php echo htmlspecialchars($rec['length']); ?>"
+                                data-created_at="<?php $date=new DateTime($rec['created_at']); echo htmlspecialchars(date_format($date,"Y-m-d"));?>"
+                                data-desc="<?php echo htmlspecialchars($rec['description'] ?? ''); ?>"
+                                data-user_id="<?php echo htmlspecialchars($rec['user_id'] ?? ''); ?>">
+                                <div class="images">
+                                    <img alt="user_created" fetchpriority="high" width="100%" height="100%" class="image" src="<?php if (isset($rec['image'])){ echo $rec['image'];}else{ echo "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-pic-design-profile-vector-png-image_40966566.jpg";}?>"/>
+                                </div>
+                                <div class="text">
+                                    <div class="small_title"><?php echo $rec['title'] ?></div>
+                                    <div class="ratings">
+                                        <div class="rating">
+                                            <img width="50" height="50" src="https://img.icons8.com/ios/50/rating.png" alt="rating"/>
+                                            <div style="text-align:center;"><?php echo $rec['rating'] ?><img class="small_star" width="15" height="15" src="https://img.icons8.com/ios/50/star--v1.png" alt="star--v1"/></div>
+                                        </div>
                     <div class="genre">
                         <img width="50" height="50" src="<?php if($rec['genre']==='Ēdiens'){echo "https://img.icons8.com/ios/50/cutlery.png";}if($rec['genre']==='Aktivitāte'){echo "https://img.icons8.com/ios/50/running--v1.png";}if($rec['genre']==='Video'){echo "https://img.icons8.com/ios/50/video-call.png";}if($rec['genre']==='Spēles'){echo "https://img.icons8.com/ios/50/controller.png";}if($rec['genre']==='Vietas'){echo "https://img.icons8.com/ios/50/national-park.png";}if($rec['genre']==='Produkti'){echo "https://img.icons8.com/ios/50/product--v1.png";}
                           ?>" alt="cutlery"/>
@@ -366,9 +392,9 @@ if (isset($_POST['genre'])){
         </div>
         <?php } ?>
         <?php } ?>
-    </div>
-    </div>
-    </main>
+                </div>
+            </div>
+        </main>
     </div>
     <?php 
     $user_id = $_SESSION['user_id'] ?? null;
@@ -511,7 +537,7 @@ items.forEach(function(item) {
             .then(function(res) { return res.text(); })
             .then(function(data) {
                 console.log('Like updated:', data);
-                if (data=="Not logged in"){
+                if (data=="Nav pieteicies"){
                     window.location.replace("php/register.php");
                 }
             })
@@ -543,10 +569,12 @@ span.onclick = function() {
 
 window.onclick = function(event) {
     if (event.target == modal) {
-        modal.style.display = "none";
-    }
-};
-</script>
+                modal.style.display = "none";
+            }
+        };
+    </script>
+        </div>
+    </main>
     </div>
 </body>
 </html>

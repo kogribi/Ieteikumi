@@ -3,7 +3,7 @@ session_start();
 require 'connect.php';
 
 if (!isset($_SESSION['user_id'])) {
-    echo 'Not logged in';
+    echo 'Nav pieteicies';
     exit;
 }
 
@@ -27,6 +27,6 @@ if (isset($_POST['post_id'], $_POST['liked'])) {
 
     echo 'OK';
 } else {
-    echo 'Missing data';
+    echo 'Trūkst dati';
 }
 ?>

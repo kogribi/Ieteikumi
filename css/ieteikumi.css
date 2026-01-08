@@ -493,6 +493,7 @@ transform: translateY(20px);
 .Modal_container{
   width: 100%;
   place-items: center;
+  align-content: center;
   padding: 10px;
   color: var(--gray-text);
 }
@@ -502,6 +503,31 @@ transform: translateY(20px);
   flex-direction: row;
   justify-content: space-between;
   width: 60%;
+}
+#Modal_genre_image_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#Modal_rating_image_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#Modal_time_image_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#Modal_price_image_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#Modal_length_image_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #Modal_genre{
   text-align: center;
@@ -534,7 +560,7 @@ transform: translateY(20px);
 }
 
 .Modal_info{
-  min-width:90px;
+  min-width:120px;
   margin-right: 10px;
   display: flex;
   flex-direction: column;

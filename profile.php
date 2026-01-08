@@ -30,11 +30,11 @@ if (isset($_POST['genre'])){
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="lv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>Profils</title>
     <link href="css/profile.css" rel="stylesheet">
 </head>
 <body>
@@ -55,28 +55,35 @@ if (isset($_POST['genre'])){
 
     </script>
     <div class="min-h-screen max-w-full">
-    <header class="header">
-        <div class="title">
-            <a href="index.php">Ieteikumi.lv</a>
-        </div>
-        <div class="login_buttons">
-            <script>
-               function myFunction() {
-                    if (confirm("Vai tu esi parliecināts? (izdzēsis visus tavus datus uz mūžu!)")) {
-                       window.location.href = "php/delete_data.php";
-                    } else {
-                        
-                    }} 
-            </script>
-            <button onclick="myFunction()" class="boton-elegante"><span>Izdzēst datus</span><img width="25" height="25" src="https://img.icons8.com/ios/50/delete-database.png" alt="home--v1"/></button>
-            <a href="php/logout.php"><button class="boton-elegante"><span>Atteikties</span><img width="25" height="25" src="https://img.icons8.com/ios/50/exit--v1.png" alt="home--v1"/></button></a>
-            
-        </div>
-    </header>
-    <main>
-    <div class="profile_outer_content">
-    <div class="content-title">Jūsu patikāmie ieteikumi:</div>
-    <div class="content">
+        <header class="header">
+            <div class="title">
+                <a href="index.php">Ieteikumi.lv</a>
+            </div>
+            <div class="login_buttons">
+                <script>
+                   function myFunction() {
+                        if (confirm("Vai tu esi parliecināts? (izdzēsis visus tavus datus uz mūžu!)")) {
+                           window.location.href = "php/delete_data.php";
+                        } else {
+
+                        }}
+                </script>
+                <button onclick="myFunction()" class="boton-elegante">
+                    <span>Izdzēst datus</span>
+                    <img width="25" height="25" src="https://img.icons8.com/ios/50/delete-database.png" alt="home--v1"/>
+                </button>
+                <a href="php/logout.php">
+                    <button class="boton-elegante">
+                        <span>Atteikties</span>
+                        <img width="25" height="25" src="https://img.icons8.com/ios/50/exit--v1.png" alt="home--v1"/>
+                    </button>
+                </a>
+            </div>
+        </header>
+        <main>
+            <div class="profile_outer_content">
+                <div class="content-title">Jūsu patikāmie ieteikumi:</div>
+                <div class="content">
         <?php foreach ($UserLikedRecomendations as $UserLikedRecomendation){ ?> 
     <div class="item"  
         data-title="<?php echo htmlspecialchars($UserLikedRecomendation['title']); ?>"
