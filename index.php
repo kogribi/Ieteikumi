@@ -105,7 +105,7 @@ if (isset($_POST['genre'])){
                     </form>
                 </div>
             
-                <div style="place-items: center;">
+                <div style="place-items: center; margin-bottom: 30px; margin-top: 20px;">
                     <button id="theme-switch">
                         <img width="25" height="25" src="https://img.icons8.com/ios/50/sun--v1.png" alt="sun--v1"/>
                         <img width="25" height="25" src="https://img.icons8.com/ios/50/do-not-disturb-2.png" alt="do-not-disturb-2"/>

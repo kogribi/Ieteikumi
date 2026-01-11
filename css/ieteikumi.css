@@ -75,6 +75,7 @@ header {
   padding: 0.5rem 1rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   border-bottom: 1px solid var(--gray-light);
+  height:66px;
 }
 
 .title {
@@ -215,6 +216,7 @@ main{
   display: flex;
   flex-direction: row;
   background-color: var(--main-color);
+  width: 100%;
 }
 .sidebar {
   display: flex;
@@ -730,58 +732,4 @@ transform: translateY(20px);
   100% {
     transform: scale(1);
   }
-}
-.theme-container{
-  display: flex;
-  place-content: center;
-  align-items: center;
-}
-.theme-checkbox {
-  --toggle-size: 16px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  width: 6.25em;
-  height: 3.125em;
-  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #efefef), color-stop(50%, #2a2a2a)) no-repeat;
-  background: -o-linear-gradient(left,  white 50%, #2a2a2a 50%) no-repeat;
-  background: linear-gradient(to right, white 50%, #2a2a2a 50%) no-repeat;
-  background-size: 205%;
-  background-position: 0;
-  -webkit-transition: 0.4s;
-  -o-transition: 0.4s;
-  transition: 0.4s;
-  border-radius: 10px;
-  position: relative;
-  cursor: pointer;
-  font-size: var(--toggle-size);
-  border: 1px solid #ddd;
-  
-}
-
-.theme-checkbox::before {
-  content: "";
-  width: 2.25em;
-  height: 2.25em;
-  position: absolute;
-  top: 0.438em;
-  left: 0.438em;
-  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #efefef), color-stop(50%, #2a2a2a)) no-repeat;
-  background: -o-linear-gradient(left, #0077ff 50%, #0077ff 50%) no-repeat;
-  background: linear-gradient(to right, #0077ff 50%, #0077ff 50%) no-repeat;
-  background-size: 205%;
-  background-position: 100%;
-  border-radius: 10px;
-  -webkit-transition: 0.4s;
-  -o-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.theme-checkbox:checked::before {
-  left: calc(100% - 2.25em - 0.438em);
-  background-position: 0;
-}
-
-.theme-checkbox:checked {
-  background-position: 100%;
 }
